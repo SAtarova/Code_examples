@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{margin:10px 10px 10px 10px;
+            background-color:antiquewhite;}
+        dt{font-weight: bold;
+            color: blue;}
+        dd{font-size: medium;
+            margin-top: 10px;
+            margin-left: 20px;}
+        p{font-style: italic;}
+        p::before p::after{background-color: blueviolet;}
+        p::selection{color: aqua;
+                    background-color: blue;}
+        ol{counter-reset: number;}
+        ol li::before{content: counter(number);
+                    counter-increment: number;}
+        ol li{color: brown;}
+        .season ol li {font-style: italic;}
+    </style>
+</head>
+<body>
+    <ol style="list-style-type: upper-roman;">
+        <li>First element</li>
+        <li>Second element
+            <ol value="2.1">Second element1</ol>
+            <ol value="2.2">Second element2</ol>
+        </li>
+    </ol>
+    <ul>
+        <li>First element</li>
+        <li>Second element</li>
+        <li><ul>Subelement1</ul></li>
+        <li><ul>Subelement2</ul></li>
+        <li><ul>Subelement3</ul></li>
+    </ul> 
+    <ol style="list-style-image: url();">
+        <li value="3">Therd element</li>
+        <li value="4">Four element</li>
+    </ol>
+    <dl>   
+        <dt>Title1</dt>
+        <dd>Define title1</dd>
+        <dt>Title2</dt>
+        <dd>Define title2</dd>
+    </dl>
+    <p>gdsdikoop</p>
+    <div class="season">New teg1</div>
+</body>
+</html>
