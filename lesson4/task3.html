@@ -8,17 +8,45 @@
         * {color: white}
         h1 {background-color: Brown;
             padding: 2%}
-        ol {background-color: Maroon;
+        ol footer {background-color: Maroon;
             padding: 0.4%;
             padding-left: 2%}
+        article {background-color: rgb(160, 69, 69);
+                 margin: 1%;
+                 width: 100%}
+        aside {background-color: rgb(160, 69, 69);
+                width: 40%;
+                padding-left: 0.5rem;
+                margin-left: 0.5rem;
+                display: block}
+        .left_side {float: left;}
+        .right_side {float: right;}
+        section {background-color: rgb(226, 169, 169);
+                 padding: 0.4%;
+                 margin: 1%}
+        footer {background-color: Maroon;}
+
+        .left_side > main {margin: 0.5rem;}
 
     </style>
 </head>    
 <body>
     <h1>HEADER</h1>
-    <ol>
+    <ol> <!--<nav>-->
         <h2>MENU</h2>
     </ol>
-
+    <article class="main">
+        <aside class="left_side">ASIDE1</aside>
+        <aside class="left_side">ASIDE2</aside>
+        <h1>MAIN CONTENT</h1>
+        <article class="section"></article>
+            <h2>SECTION 1</h2>
+        <article class="section"></article>
+            <h2>SECTION 2</h2>       
+            <aside class="rigth_side">ASIDE3</aside>
+    </article>
+    <footer>
+        FOOTER
+    </footer>
 </body>
 </html>
