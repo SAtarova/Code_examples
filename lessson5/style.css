@@ -1,0 +1,18 @@
+table {border: 2px solid;
+    border-collapse: separate;
+    border-spacing: 10px;
+    background-color: aquamarine;
+    font-size: 25px;
+        }
+th {border: 2px solid;}
+td {border: 2px solid;}
+#uniq {width: 30vw;
+        height: 20vh;
+        background-image: url(icons\free-icon-apple-7476025.png)}
+caption {text-align: right;
+         caption-side: top}        
+col-1 {background-color: bisque;} 
+col-2 {background-color: rgb(204, 165, 115);}       
+thead {color: red}
+tbody {color: black}
+tfoot {color: green}

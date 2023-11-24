@@ -1,0 +1,29 @@
+caption {text-align: right;
+        color: grey;
+        font-size: 28px;
+        font-weight: 700;
+        text-transform: uppercase;
+}
+.container {border: 1px solid;
+            width: fit-content;}
+thead > tr {border-bottom: 1px solid black}
+tfoot {font-style: bold}
+tr th:first-child {color:antiquewhite}
+.col-1 {background-color: grey;
+        color: darkgray}
+.col-2 {background-color: aquamarine;}
+.col-3 {background-color: greenyellow;}
+.col-4 {background-color: yellow;}
+.col-5 {background-color: rgb(233, 132, 132);}
+span{
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.2em;
+        display: inline-block;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+       }
+       
