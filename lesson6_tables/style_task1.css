@@ -1,0 +1,16 @@
+thead {background-color: rgb(131, 131, 238);
+        margin: 0;}
+thead tr th {width: 150px;}
+table {border-collapse: collapse;
+        border-spacing:0;
+        min-width: 1000px;
+        overflow: scrool}
+tr td:first-child {font-weight: 700;
+                    background-color: rgb(131, 131, 238) !important;
+                    position: sticky;
+                    left: 0}
+tbody tr:nth-child(even) td {background-color: lightgray} 
+tr {text-align: center;}     
+thead {position: sticky;
+        top: 0}       
+              
