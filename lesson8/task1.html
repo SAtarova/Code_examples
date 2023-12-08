@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_task1.css"> 
+</head>
+<body>
+    <div id="card">
+        <img src="icons\pngegg.png" alt="image">
+        <div class="title">
+            <p>CREDIT CARD DETAILS</p>
+        </div>
+        <form action="/search" method="POST">
+            <ul>
+                <li>
+                    <label>
+                        <span id="for_number">Card number</span><br>
+                        <input type="text" id="number" name="cardNumber" value="1234 5678 9012 3456"/>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <span id="for_name">Name on card</span><br>
+                        <input type="text" id="name" name="userName" value="Name SurName">
+                    </label>
+                </li>
+                <li class="inline_data">
+                    <div>
+                        <label>
+                            <span>Expiry date</span><br>
+                            <input type="number" 
+                                   id="month" 
+                                   name="expriMonth"
+                                   min="1" 
+                                   max="12" 
+                                   step="1"
+                                   value="02">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <span></span><br>
+                            <input type="text" id="year" name="expriYear" value="2017">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <span>CVV/CVN</span><br>
+                            <input type="password" id="cvv" name="cvv" value="***">
+                        </lable>
+                    </div>
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+#card  {background: lightblue;
+        border-radius: 8px;
+        height: 250px;
+        width: 350px;
+        position: relative;
+        padding-left: 20px;
+        margin-left: 100px;
+        /*overflow: hidden*/}
+
+img {position: absolute;
+     height: 30%;
+     width: 30%;
+     bottom: 0;
+     right: 0}
+
+.title {position: absolute;
+        background: Coral;
+        height: 30px;
+        width: 280px;
+        top: 20px;
+        left: -20px;}
+
+.title p {margin-left: 40px;
+          margin-top: 9px;
+          font-size: 12px;
+          font-weight: bold;
+          color: White}
+
+form {position: absolute;
+      top: 70px;      
+      font-size: 15px;
+      color: DimGrey}
+
+ul {list-style: none;
+    padding: 0px;
+    margin: 0px;}
+
+li {margin-bottom: 15px;}
+
+input {color: DimGrey;
+       height: 20px;       
+       background: PowderBlue;
+       box-sizing: border-box;
+       border-top-style: none;
+       border-bottom-width: 1px;
+       border-right-style: none;
+       border-left-style: none;
+       }
+
+input:focus {border-color: DarkSlateGray}
+
+input[id="number"], 
+input[id="name"]  {width: 220px}
+input[id="month"],
+input[id="year"],
+input[id="cvv"] {width: 70px}
+
+.inline_data {display: flex;
+              flex-flow: row nowrap;
+              justify-content: space-between;}
