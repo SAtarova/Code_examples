@@ -1,9 +1,13 @@
-.top_block {position: relative;
-            top: 0;
-            bottom: 0;
-            width: 1600px;
-            height: 900px;
-            background-image: url("icons\Каркас.png")}
+*{margin: 0px;}
+
+.site {width: 100%;
+       top: 0px;
+       left: 0px;}
+
+header {position: relative;
+        margin: 0px;
+        width: 1600px;
+        height: 900px;}
 
 .burger {position: absolute;
         z-index: 1;
@@ -19,21 +23,99 @@
         width: 354.42px;
         height: 72.51px;}
 
-.bag {position: absolute;
-    top: 101px;
-    left: 1232px;
-    width: 70px;
-    height: 70px;}
+.basket_button {position: absolute;
+                top: 101px;
+                left: 1232px;
+                width: 70px;
+                height: 70px;}
 
-p {position: absolute;}    
+.order_button {position: absolute;
+                top: 523px;
+                left: 130px;
+                width: 180.86px;
+                height: 60px;}
+p,
+h1 {position: absolute;
+    font-style: Times New Roman}    
 
-.main {top: 117px;
-    left: 632px;
-    font-size: 25px;
-    font-weight: bold}
+.main,
+.sales,
+.about {font-size: 25px;}
+
+.main  {top: 117px;
+        left: 632px;
+        font-weight: bold}
 
 .sales {top: 117px;
-    left: 25px;
-    font-size: 632px;}
+        left: 850px;}
   
+.about {top: 117px;
+        left: 1032px;}
+
+.delivery  {top: 367px;
+            left: 130px;
+            font-size: 32px;
+            font-weight: bold;}
+
+.order {top: 459px;
+        left: 130px;
+        font-size: 16px;}
+
+main   {
+        width: 1560px;
+        height: 800px;
+        top: 900px;
+        background: #FFFFFF;        
+        padding-left: 40px;
+        padding-top: 80px;       
+        /*display: flex;
+        flex-flow: wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;*/
+        }
+
+h1  {margin-left: auto;
+     margin-right: auto;
+     top: 900px;
+     left: 729px;
+     font-size: 45px;
+     font-weight: bold;}
+
+figure {border-radius: 50px;
+        padding: 0px;
+        float: left;
+        width: 450px;
+        height: 300px;
+        margin: 25px;
+        font-size: 30px;
+        text-align: center;}
+
+footer {position: relative;
+        margin-top: 0px;
+        text-align: center;
+        width: 1600px;
+        height: 450px;
+        font-size: 20px;}
+
+div {position: absolute;     
+     top: 157px;
+     left: 220px;
+     height: 24px;
+     padding: 0px;
+     clear: both;
+     display: flex;
+     flex-flow: wrap;
+     align-items: center;
+     align-content: center}
+
+.firm {top: 230px;
+       left: 730px}
+
+.license {top: 274px;
+          left: 720px}
+
+#pic_icons {top: 350px;
+            left: 760px}
+
 

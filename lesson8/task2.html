@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_task2.css"> 
+</head>
+<body>
+    <div class="main_frame">
+        <h1>Inputs</h1>
+        <form action="/search" method="POST" class="inputs">
+            <input type="text" id="without_check" name="without_check_name" value="Enter some text"/>
+            <div>                
+                <input type="text" id="check_right" name="check_right_name" required pattern="valid text" value="valid text"/>
+                <img src="icons\krasnii-krestik.png" alt="x"/>
+            </div>
+            <div> 
+                <input type="text" id="check_error" name="check_error_name" required pattern="invalid text" value="invalid text"/>
+                <img src="icons\krasnii-krestik.png" alt="x"/>
+            </div>
+        </form>
+    </div>
+</body>
+</html>    

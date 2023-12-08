@@ -1,0 +1,63 @@
+.main_frame {width: 700px;
+            height: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 30px;
+            position: relative;
+             background: lightgray}
+
+h1 {font-size: 30px;
+    font-weight: bolder;
+    } 
+    
+.inputs {position: absolute;
+        top: 70px;
+        display: inline-block;
+        margin-top: 20px;               
+        }
+
+input {height: 30px;
+        width: 70px;
+        border-radius: 4px;
+        font-size: 15px;
+        padding-left: 15px;}        
+        
+input[id="without_check"] {border-color: grey;
+                            color: DimGrey;}
+input[id="check_error"] {border-color: red;
+                            color: red;
+                            padding-right: 25px;
+                            /*
+                            background: url("icons\krasnii-krestik.png") no-repeat right;
+                            background-color: red;
+                            background-size: 20px;*/}
+input[id="check_right"] {border-color: green;
+                            color: green;
+                            padding-right: 25px;
+                            /*background: url("icons\krasnii-krestik.png") no-repeat right;
+                            background-color: green;
+                            background-size: 20px;*/}                           
+
+img {position: relative;
+    margin-left: -40px;
+    width: 20px;
+    height: 20px;}
+
+input[id="check_right"]:valid:not(:placeholder-shown) {background: white;}
+input[id="check_error"]:valid:not(:placeholder-shown) {background: white;}
+
+input[id="check_right"]:invalid,
+input[id="check_error"]:invalid
+ {
+    background: rgb(192, 136, 136);
+  }
+  
+input[id="check_right"]:valid,
+input[id="check_error"]:valid
+ {
+    background: rgb(119, 168, 119);
+  }
+    
+
+
+
