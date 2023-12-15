@@ -6,22 +6,34 @@
     <title>Document</title>
     <link rel="stylesheet" href="style_task2.css"> 
 </head>
-<body>
-    <div class="main_frame">
-        <h1>Inputs</h1>
-        <form action="/search" method="POST" class="inputs">
-            <div>
-                <input type="text" id="without_check" name="without_check_name" value="Enter some text"/>
+<body>        
+        <form action="/search" method="POST">
+            <h1 id="inputs_title">Inputs</h1>
+            <div id="inputs">            
+                <div>
+                    <input type="text" id="without_check" name="without_check_name" value="Enter some text"/>
+                </div>
+                <div>                
+                    <input type="text" id="check_right" name="check_right_name" required pattern="valid text" value="valid text"/>
+                    <img src="icons\green_checkmark.png" alt="x"/>
+                </div>
+                <div> 
+                    <input type="text" id="check_error" name="check_error_name" required pattern="invalid text" value="invalid text"/>
+                    <img src="icons\krasnii-krestik.png" alt="x"/>
+                </div>
             </div>
-            <div>                
-                <input type="text" id="check_right" name="check_right_name" required pattern="valid text" value="valid text"/>
-                <img src="icons\krasnii-krestik.png" alt="x"/>
-            </div>
-            <div> 
-                <input type="text" id="check_error" name="check_error_name" required pattern="invalid text" value="invalid text"/>
-                <img src="icons\krasnii-krestik.png" alt="x"/>
+            <h1 id="checkboxes_title">Check boxes</h1>
+            <div id="check_boxes">
+                <div>                    
+                    <input type="checkbox" id="checkbox_green" name="checkbox_green" />
+                    <span>Subscribe</span>
+                </div>
+                <div>
+                    <input type="checkbox" id="checkbox_red" name="checkbox_red" />
+                    <span>Subscribe</span>
+                </div>
+                
             </div>
         </form>
-    </div>
 </body>
 </html>    

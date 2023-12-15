@@ -10,18 +10,18 @@ header {position: relative;
         height: 900px;}
 
 .burger {position: absolute;
-        z-index: 1;
-        top: 194px;
-        left: 740px;
-        width: 642.69px;
-        height: 600px;}
+         z-index: 1;
+         top: 194px;
+         left: 740px;
+         width: 642.69px;
+         height: 600px;}
 
 .logo {position: absolute;
-        z-index: 1;
-        top: 105px;
-        left: 130px;
-        width: 354.42px;
-        height: 72.51px;}
+       z-index: 1;
+       top: 105px;
+       left: 130px;
+       width: 354.42px;
+       height: 72.51px;}
 
 .basket_button {position: absolute;
                 top: 101px;
@@ -30,10 +30,10 @@ header {position: relative;
                 height: 70px;}
 
 .order_button {position: absolute;
-                top: 523px;
-                left: 130px;
-                width: 180.86px;
-                height: 60px;}
+               top: 523px;
+               left: 130px;
+               width: 180.86px;
+               height: 60px;}
 p,
 h1 {position: absolute;
     font-style: Times New Roman}    
@@ -61,19 +61,12 @@ h1 {position: absolute;
         left: 130px;
         font-size: 16px;}
 
-main   {
-        width: 1560px;
+main   {width: 1560px;
         height: 800px;
         top: 900px;
         background: #FFFFFF;        
         padding-left: 40px;
-        padding-top: 80px;       
-        /*display: flex;
-        flex-flow: wrap;
-        align-items: center;
-        align-content: center;
-        justify-content: space-between;*/
-        }
+        padding-top: 80px;}
 
 h1  {margin-left: auto;
      margin-right: auto;
@@ -93,29 +86,24 @@ figure {border-radius: 50px;
 
 footer {position: relative;
         margin-top: 0px;
-        text-align: center;
+        display: flex;
+        justify-content: center; 
         width: 1600px;
         height: 450px;
         font-size: 20px;}
 
-div {position: absolute;     
-     top: 157px;
-     left: 220px;
-     height: 24px;
-     padding: 0px;
-     clear: both;
-     display: flex;
-     flex-flow: wrap;
-     align-items: center;
-     align-content: center}
+#about_company {position: absolute;
+                width: 70%;
+                top: 157px;
+                margin-left: 100px;}
 
-.firm {top: 230px;
-       left: 730px}
+#about_company span {display: inline-block;
+                     text-align: center;
+                     width: 30%;}
 
-.license {top: 274px;
-          left: 720px}
+.firm {top: 230px;}
 
-#pic_icons {top: 350px;
-            left: 760px}
+.license {top: 274px;}
 
-
+#pic_icons {position: absolute;
+            top: 350px;}
