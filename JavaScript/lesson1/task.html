@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <script>
+        /* task1 */
+        sUserName = prompt("Enter your name: ", "")
+        alert("Hello, " + sUserName + "!")
+
+        /* task2 */
+        nCurrentYear = 2023
+        nBirthYear = +prompt("Enter your birth year: ", "")
+        alert("You are " + (nCurrentYear - nBirthYear))
+
+        /* task3 */
+        nSquearSide = +prompt("Enter lenght of squear side: ", "")
+        alert("Squear perimeter = " + (nSquearSide**2))
+
+        /* task4 */
+        nPi = 3.14
+        nCircleRadius = +prompt("Enter radius of circle: ", "")
+        alert("Circle area = " + (nPi*nCircleRadius**2))
+
+        /* task5 */
+        nDistance = +prompt("Enter distance between towns (km): ", "")
+        nTime     = +prompt("Enter your needed time (min): ", "")
+        alert("You need to run with " + (nDistance/nTime) + " km/h")
+
+        /* task6 */
+        nEuro   = 99
+        nDollar = 90
+        nSumDollars = +prompt("Enter sum in dollars: ", "")
+        alert("It's = " + (nSumDollars*nDollar/nEuro) + " euro")
+
+        /* task7 */
+        nGbSize = +prompt("Enter size in Gb: ", "")
+        nMbSize = nGbSize*1024
+        alert((nMbSize/820).toFixed(2) + " files by 820 Mb can be load on your flash card")
+
+        /* task8 */
+        nMoney   = +prompt("Enter your money: ", "")
+        nPrice   = +prompt("Enter cholate price: ", "")
+        nCount   = nMoney/nPrice
+        nBalance = nMoney%nPrice
+        alert((nCount).toFixed(0) + " chocolates your can bay and your balance = " + nBalance)        
+
+        /* task9 */
+        nNumber  = +prompt("Enter three-digit number: ", "")
+        if (nNumber.toString().length != 3) alert("Error. Need to enter three-digit number")
+        nResult = 0
+        while (nNumber) {
+            nResult *= 10;
+            nResult += nNumber % 10;
+            nNumber = Math.floor(nNumber / 10);} 
+        alert(nResult)        
+
+        /* task10 */
+        nNumber  = +prompt("Enter a integer number: ", "")
+        if (nNumber%2) alert("It's not even number")
+        else alert("It's even number")
+
+        </script>
+    </body>
+</html>
