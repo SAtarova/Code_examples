@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <script>  
+
+            /* task1 
+            class Circle
+            {
+                constructor(nRadius)
+                {
+                    this.nRadius = nRadius
+                }
+
+                get GetRadius()
+                {
+                    return this.nRadius
+                }
+
+                set SetRadius(nRadius)
+                {
+                    this.nRadius = nRadius
+                }
+
+                get Diameter()
+                {
+                    return 2*this.nRadius
+                }
+
+                CalcArea()
+                {
+                    return Math.pow(2*Math.PI*this.nRadius, 2)
+                }
+
+                CalcLength()
+                {
+                    return 2*Math.PI*this.nRadius
+                }
+            }
+
+            const objCircle = new Circle(10);
+            console.log(objCircle.CalcArea()); 
+            console.log(objCircle.CalcLength());
+            console.log(objCircle.Diameter);
+            console.log(objCircle.GetRadius);
+            console.log(objCircle.SetRadius = 20);
+            console.log(objCircle.GetRadius);
+            
+            /* task2 */
+            class HtmlElement
+            {
+                constructor(sTagName, bEndTag, sText = "", objAttributes = "", objStyles = "", objInsertData = "")
+                {
+                    this.sTagName      = sTagName,
+                    this.bEndTag       = bEndTag,
+                    this.sText         = sText,
+                    this.objAttributes = objAttributes
+                    this.objStyles     = objStyles
+                    
+                    strAttributes = objAttributes.join(' ')
+                    strAttributes = objAttributes.join(' ')
+                }
+
+                AddAttribute()
+                {
+                    document.write(`<${this.sTagName} ${this.objAttributes} ${this.objStyles}>${this.sText}`)
+                    if (this.bEndTag)
+                        document.write(`</${this.sTagName}>`)
+                }
+            }
+
+            var objAttributes = new listAttributes("src='some.jpg'", "alt='Loren Ispum'")
+
+            var objStyles = 
+            {
+                property: "style",
+                attribute: ""
+            }
+
+            objH3 = new HtmlElement('h3', true, "What is Lorem Ispum?")
+            objH3.AddAttribute()
+
+            
+            objAttributes.property  = 'src'
+            objAttributes.attribute = '"some.jpg"'
+
+        </script>
+    </body>
+</html>
