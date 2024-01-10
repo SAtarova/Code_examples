@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <script>  
+
+            /* task1 
+            class Car
+            {
+                constructor(sCarProducer, sModel, nProdactionYear, nAverageSpeed)
+                {
+                    this.sCarProducer    = sCarProducer
+                    this.sModel          = sModel
+                    this.nProdactionYear = nProdactionYear
+                    this.nAverageSpeed   = nAverageSpeed                    
+                }
+                GetInfo()
+                {
+                    return ('Car Producer: ' + this.sCarProducer + '\nModel: ' + this.sModel + '\nProdaction Year: ' + (this.nProdactionYear).toString()
+                        + '\nAverage Speed: ' + (this.nAverageSpeed).toString())
+                }
+                GetTime(nDistance)
+                {
+                    let nTime        = nDistance/this.nAverageSpeed
+                    let nCountOfStop = Math.floor(nTime/4)
+
+                    if (nCountOfStop > 0)
+                    {
+                        nTime = nTime + nCountOfStop
+                    }
+
+                    return nTime
+                }
+            }
+
+            objCar = new Car('Audi', 'Q7', 2019, 90)
+            alert(objCar.GetInfo())
+            alert(objCar.GetTime(500))
+
+            /* task2 
+            class objFraction 
+            {
+                constructor(nNumerator, nDenumerator)
+                {
+                    this.nNumerator   = nNumerator
+                    this.nDenumerator = nDenumerator
+                }
+            }
+
+            var objFraction1 = new objFraction(2, 3)
+            var objFraction2 = new objFraction(1, 3)
+
+            function FractionSimplification(objFraction)
+            {
+                let listDividers = []
+
+                for (i = 1; i <= objFraction.nNumerator; i++)
+                { 
+                    if ((objFraction.nNumerator % i  == 0) && 
+                       (objFraction.nDenumerator % i == 0)) 
+                        listDividers.push(i)
+                }
+
+                nMaxDivider = Math.max.apply(null, listDividers)
+                objFraction.nNumerator   = objFraction.nNumerator/nMaxDivider
+                objFraction.nDenumerator = objFraction.nDenumerator/nMaxDivider
+
+                return objFraction
+            }
+
+            function FractionSum(objFraction1, objFraction2)
+            {   
+                let objFractionResult = new objFraction()
+
+                if (objFraction1.nDenumerator == objFraction2.nDenumerator)
+                {
+                    objFractionResult.nNumerator   = objFraction1.nNumerator + objFraction2.nNumerator
+                    objFractionResult.nDenumerator = objFraction1.nDenumerator
+                }
+                else
+                {                    
+                    objFractionResult.nNumerator   = objFraction1.nNumerator * objFraction2.nDenumerator + objFraction2 * objFraction1.nDenumerator
+                    objFractionResult.nDenumerator = objFraction1.nDenumerator * objFraction2.nDenumerator
+                }
+
+                objFractionResult = FractionSimplification(objFractionResult)
+
+                return objFractionResult
+            }            
+
+            function FractionMinus(objFraction1, objFraction2)
+            {
+                let objFractionResult = new objFraction()
+
+                if (objFraction1.nDenumerator == objFraction2.nDenumerator)
+                {
+                    objFractionResult.nNumerator   = objFraction1.nNumerator - objFraction2.nNumerator
+                    objFractionResult.nDenumerator = objFraction1.nDenumerator
+                }
+                else
+                {
+                    objFractionResult.nNumerator   = objFraction1.nNumerator * objFraction2.nDenumerator - objFraction2 * objFraction1.nDenumerator
+                    objFractionResult.nDenumerator = objFraction1.nDenumerator * objFraction2.nDenumerator
+                }
+
+                objFractionResult = FractionSimplification(objFractionResult)
+
+                return objFractionResult             
+            }
+
+            function FractionMultiply(objFraction1, objFraction2)
+            {
+                let objFractionResult = new objFraction()
+
+                objFractionResult.nNumerator   = objFraction1.nNumerator * objFraction2.nNumerator
+                objFractionResult.nDenumerator = objFraction1.nDenumerator * objFraction2.nDenumerator
+
+                objFractionResult = FractionSimplification(objFractionResult)
+
+                return objFractionResult
+            }
+
+            function FractionDivide(objFraction1, objFraction2)
+            {
+                let objFractionResult = new objFraction()
+
+                objFractionResult.nNumerator   = objFraction1.nNumerator * objFraction2.nDenumerator
+                objFractionResult.nDenumerator = objFraction2.nNumerator * objFraction1.nDenumerator
+
+                objFractionResult = FractionSimplification(objFractionResult)
+
+                return objFractionResult
+            }
+
+            console.log(FractionSum(objFraction1, objFraction2))
+            console.log(FractionMinus(objFraction1, objFraction2))
+            console.log(FractionMultiply(objFraction1, objFraction2))
+            console.log(FractionDivide(objFraction1, objFraction2))
+
+            /* task3 */
+            var objTime = 
+            {
+                nHours:   +prompt('Enter a hours (0-24):'),
+                nMinutes: +prompt('Enter a minutes:'),
+                nSeconds: +prompt('Enter a seconds:')
+            }
+
+            function GetTime(objTime)
+            {
+                sHours   = objTime.nHours.toString()
+                sMinutes = objTime.nMinutes.toString()
+                sSeconds = objTime.nSeconds.toString()
+
+                if (sHours.length == 1)
+                    sHours = '0' + sHours
+                if (sMinutes.length == 1)
+                    sMinutes = '0' + sMinutes
+                if (sSeconds.length == 1)
+                    sSeconds = '0' + sSeconds
+
+                let sOutput = 'Time is ' + sHours + ':' + sMinutes + ':' + sSeconds
+                return sOutput
+            }
+
+            alert(GetTime(objTime))
+            
+            function ChangeSecundsInTime(objTime)
+            {
+                nTimeInSeconds = +prompt('Enter count of seconds for adding:')
+
+                let objNewTime = 
+                {
+                    nHours:   objTime.nHours,
+                    nMinutes: objTime.nMinutes,
+                    nSeconds: objTime.nSeconds
+                }                
+                
+                let nNewSeconds    = nTimeInSeconds + objTime.nSeconds
+                let nTimeInMinutes = Math.floor(nNewSeconds / 60)
+                let nTimeInHours   = Math.floor(nTimeInMinutes / 60)
+                console.log(nTimeInMinutes)
+                console.log(nTimeInHours)
+
+                if (nTimeInMinutes < 1)
+                {
+                    objNewTime.nSeconds = nNewSeconds                    
+                }
+                else if (nTimeInMinutes == 1)                
+                {
+                    if (nNewSeconds % 60)
+                        objNewTime.nSeconds = nNewSeconds % 60                         
+                    else
+                        objNewTime.nSeconds = 0
+
+                    objNewTime.nMinutes = objNewTime.nMinutes + 1
+                    if (objNewTime.nHours == 24 && objNewTime.nMinutes == 60)
+                    {
+                        objNewTime.nHours   = 1
+                        objNewTime.nMinutes = 0
+                    }
+                }
+                else
+                {
+                    objNewTime.nSeconds = nNewSeconds % 60                    
+                    objNewTime.nMinutes += nTimeInMinutes
+
+                    if (objNewTime.nMinutes >= 60)
+                        objNewTime.nMinutes = objNewTime.nMinutes % 60
+                        objNewTime.nHours += nTimeInMinutes
+
+                        //objNewTime.nHours = objNewTime.nHours - (24 * Math.floor(nTimeInHours))
+                }
+                alert('Entered ' + GetTime(objTime) + '\nChanged ' + GetTime(objNewTime))
+            }
+
+            ChangeSecundsInTime(objTime)
+
+        </script>
+    </body>
+</html>

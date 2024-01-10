@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <script>  
+
+            /* task1 
+            class Marker
+            {
+                constructor(sColor, nPercent)
+                {
+                    this.sColor   = sColor
+                    this.nPercent = 100
+                }
+                PrintString(sString)
+                {
+                    let nStringLen = 0.5 * sString.replaceAll(' ', '').length
+
+                    while(nStringLen < this.nPercent)
+                    {                                           
+                        console.log('%c' + sString, 'font-size: 3em; font-weight: bold; color: ' + this.sColor)
+                        this.nPercent -= 0.5 * nStringLen  
+                    }
+
+                    console.log('%cMarker has not enough toner for you text, need to fill it!', 'color: red')
+                }    
+            }
+
+            class FillMarker extends Marker
+            {
+                constructor(sColor, nPercent)
+                {
+                    super(sColor, nPercent)
+                }
+                FillMarker()
+                {
+                    this.nPercent = 100
+                }
+            }
+
+            var sColor = 'blue'
+            var objFillMarker = new FillMarker(sColor)
+            objFillMarker.PrintString('I write by marker. Now we use ' + sColor + ' color.')
+            var sNewColor = 'green'
+            objFillMarker.FillMarker(sNewColor)            
+            objFillMarker.PrintString('I write by marker. Now we use ' + sColor + ' color.')
+
+            /* task2 */
+            class ExtendedDate extends Date
+            {
+                constructor(nYear, nMonth, nDay) 
+                {
+                    super()
+
+                    // Get current date
+                    let nTodayYear  = this.getFullYear()
+                    let nTodayMonth = this.getMonth()
+                    let nTodayDay   = this.getDate()
+                    this.objTodayDate= this.getTime()
+
+                    // Redefine current with input date
+                    let nInputYear  = this.setFullYear(nYear)
+                    this.nInputYear  = this.getFullYear()
+                    let nInputMonth = this.setMonth(nMonth)
+                    this.nInputMonth = this.getMonth()
+                    let nInputDay   = this.setDate(nDay)
+                    this.nInputDay   = this.getDate()
+                    this.objInputDate = this.getTime()
+                }
+                CheckActualDate()
+                {
+                
+                    let bCompareResult = this.objInputDate > this.objTodayDate
+                    console.log(bCompareResult)
+                }
+                IncreaseDateOnOneDay()
+                {
+                    console.log(this.nInputDay + ' ' + this.nInputMonth)
+                    this.objInputDate.setDate(this.objInputDate.getDate() + 1)
+                    console.log(this.nInputDay + ' ' + this.nInputMonth)
+                }
+            }
+
+            objExtendedDate = new ExtendedDate(2023, 10, 23)
+            //objExtendedDate.CheckActualDate()
+            objExtendedDate.IncreaseDateOnOneDay()
+
+        </script>
+    </body>
+</html>

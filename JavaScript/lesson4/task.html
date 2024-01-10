@@ -6,7 +6,7 @@
     <body>
         <script>  
 
-            /* task1 
+            /* task1 */
             class Circle
             {
                 constructor(nRadius)
@@ -51,40 +51,167 @@
             /* task2 */
             class HtmlElement
             {
-                constructor(sTagName, bEndTag, sText = "", objAttributes = "", objStyles = "", objInsertData = "")
+                constructor()
                 {
-                    this.sTagName      = sTagName,
-                    this.bEndTag       = bEndTag,
-                    this.sText         = sText,
-                    this.objAttributes = objAttributes
-                    this.objStyles     = objStyles
+                    this.arrAticle       = arguments
+                    this.nLenArrayAlicle = this.arrAticle.length 
+                    this.sHtmlString     = ""
+                }
+                SetAttribute(sTag, sId, objAttributes)
+                {
+                    if (objAttributes)
+                    {
+                        sAttributes = objAttributes.join(' ')
+                        let nIndexInArray = this.FindTheTag(sTag, sId)
+                        this.arrAticle[nIndexInArray][3] = this.arrAticle[nIndexInArray][3] + ' ' + sAttributes
+                    }
+             
+                }
+                SetStyle(sTag, sId, objStylies)
+                {                    
+                    if (objStylies)
+                    {
+                        sStylies = objStylies.join(' ')
+                        let nIndexInArray = this.FindTheTag(sTag, sId)
+                        this.arrAticle[nIndexInArray][4] = this.arrAticle[nIndexInArray][4] + ' ' + sStylies
+
+                    }
+             
+                }
+                FindTheTag(sTag, sId)
+                {
+                    for (let i = 0; i < this.nLenArrayAlicle; i++) 
+                        {
+                            if (this.arrAticle[i][0].indexOf(sTag) != -1)
+                            {
+                                 var sPresentedAttributes = this.arrAticle[i][3]
+                                 if (sPresentedAttributes.indexOf(sId) != -1  || sId == "")
+                                 {
+                                    return i
+                                }
+                            }
+                        }
+                }
+                AddEncloseElemInEnd(sTag, sId, objEncloseElem)
+                {
+                    let nIndexInArray = this.FindTheTag(sTag, sId)                        
+                    this.arrAticle[nIndexInArray].push(objEncloseElem)
+                }
+                AddEncloseElemInStart(sTag, sId, objEncloseElem)
+                {
+                    let nIndexInArray = this.FindTheTag(sTag, sId)
+                    this.arrAticle[nIndexInArray].unshift(objEncloseElem)
+                }
+                GetTagString(objTeg)
+                {
+                    this.sHtmlString += `\n<${objTeg[0]} ${objTeg[3]} ${objTeg[4]}>${objTeg[2]}`                    
+
+                    for (let i = 0; i < objTeg[5].length; i++)
+                        this.GetTagString(objTeg[5][i])
+
+                    if (objTeg[1])
+                        this.sHtmlString += `\n</${objTeg[0]}>`
+
+                    return this.sHtmlString                   
+                }
+                getHtml()
+                {           
+                    let nIndexInArray = this.FindTheTag('div', 'wrapper')                    
                     
-                    strAttributes = objAttributes.join(' ')
-                    strAttributes = objAttributes.join(' ')
-                }
+                    this.sHtmlString = this.GetTagString(this.arrAticle[nIndexInArray])
 
-                AddAttribute()
-                {
-                    document.write(`<${this.sTagName} ${this.objAttributes} ${this.objStyles}>${this.sText}`)
-                    if (this.bEndTag)
-                        document.write(`</${this.sTagName}>`)
+                    return this.sHtmlString
                 }
             }
 
-            var objAttributes = new listAttributes("src='some.jpg'", "alt='Loren Ispum'")
+            // Structure: name of tag, bEndTag, sText = "", objAttributes = "", objStyles = "", objInsertData = ""
+            var objH3   = ['h3', true, "What is Lorem Lispum?", "", "", []]
+            var objImg  = ['img', false, "", "src = 'icons\\free-icon-apple-7476025.png' alt = 'Lorem Lispum'", "style = 'height: 20%; width: 20%;'", []]
+            var objA    = ['a', true, "More...", "href = 'https://lipsum.com' target = '_blank'", "", []]
+            var objP    = ['p', true, "Lorem Lispum is simply dummy text of the printing and typesetting industry. Kvc cfnfjkiddosl dckcvmmvld lvm,bmtf mkcvkkjgk lvfkf \
+            jfjfjj ngvjgjk ldff. Hkrg, blvnvjfgir9l.v mvjifsd ;fkvh nvngfhu kcfikfdoi8ue jfhydt jcjfe8tpj. m,fgji6n kbkigy9 kvkjbii9.", "", "style = 'text-align: justify'", [objA]]
+            var objDiv1 = ['div', true, "", "", "style = 'widht: 300px; margin: 10px'", [objH3, objImg, objP]]
+            var objDiv2 = ['div', true, "", "", "style = 'widht: 300px; margin: 10px'", [objH3, objImg, objP]]
+            var objDiv3 = ['div', true, "", "id = 'wrapper'", "style = 'display: flex'", [objDiv1, objDiv2]]
 
-            var objStyles = 
+            var objHtmlCode = new HtmlElement(objH3, objImg, objP, objA, objDiv1, objDiv2, objDiv3)
+            sHtmlString = objHtmlCode.getHtml()
+            document.write(sHtmlString)
+            console.log(sHtmlString)
+
+            /* task3 */
+            class CssClass
             {
-                property: "style",
-                attribute: ""
+                constructor(sCssClassName, listStyles)
+                {
+                    this.sCssClassName = sCssClassName
+                    this.listStyles    = listStyles
+                }
+                SetStyle(sStyle)
+                {
+                    this.listStyles.push(sStyle)
+                }
+                DelStyle(sStyle)
+                {
+                    let nIndexForDel = this.listStyles.indexOf(sStyle) 
+                    this.listStyles.splice(nIndexForDel, 1)
+                }
+                getCss(sCssClassName)
+                {
+                    return (this.sCssClassName + ' {\n\t' + this.listStyles.join(';\n\t') + '\n}\n')
+                }
             }
 
-            objH3 = new HtmlElement('h3', true, "What is Lorem Ispum?")
-            objH3.AddAttribute()
+            objCssClass = new CssClass('.title', ['position: absolute', 'background: Coral', 'height: 30px', 'width: 280px', 'top: 20px'])            
+            console.log(objCssClass.getCss())
+            console.log(objCssClass.SetStyle('left: -20px'))
+            console.log(objCssClass.getCss())
+            console.log(objCssClass.DelStyle('top: 20px'))
+            console.log(objCssClass.getCss())
 
-            
-            objAttributes.property  = 'src'
-            objAttributes.attribute = '"some.jpg"'
+            /* task4 */
+            class HtmlBlock
+            {
+                constructor(listFullCssStyles, objHtmlCode)
+                {
+                    this.listFullCssStyles = listFullCssStyles
+                    this.objHtmlCode       = objHtmlCode
+                }
+                getCode()
+                {
+                    let sResultString  = ""
+                    let objOneCssStyle = ""
+
+                    for (objOneCssStyle of this.listFullCssStyles)
+                        sResultString += objOneCssStyle.getCss()
+
+                    sResultString += objHtmlCode.getHtml()                    
+
+                    return sResultString
+                }
+            }
+
+            // Make CSS objects
+            var objOneCssClass1   = new CssClass('.wrap', ['display: flex;'])
+            var objOneCssClass2   = new CssClass('.block', ['widht: 300px', 'margin: 10px;'])
+            var objOneCssClass3   = new CssClass('.img', ['height: 20%', 'width: 20%;'])
+            var objOneCssClass4   = new CssClass('.text', ['text-align: justify;'])
+            var listFullCssStyles = [objOneCssClass1, objOneCssClass2, objOneCssClass3, objOneCssClass4]
+
+            // Make HTML objects
+            var objH3   = ['h3', true, "What is Lorem Lispum?", "", "", []]
+            var objImg  = ['img', false, "", "class = 'img' src = 'icons\\free-icon-apple-7476025.png' alt = 'Lorem Lispum'", "", []]
+            var objA    = ['a', true, "More...", "href = 'https://lipsum.com' target = '_blank'", "", []]
+            var objP    = ['p', true, "Lorem Lispum is simply dummy text of the printing and typesetting industry. Kvc cfnfjkiddosl dckcvmmvld lvm,bmtf mkcvkkjgk lvfkf \
+            jfjfjj ngvjgjk ldff. Hkrg, blvnvjfgir9l.v mvjifsd ;fkvh nvngfhu kcfikfdoi8ue jfhydt jcjfe8tpj. m,fgji6n kbkigy9 kvkjbii9.", "class = 'test'", "", [objA]]
+            var objDiv1 = ['div', true, "", "class = 'block'", "", [objH3, objImg, objP]]
+            var objDiv2 = ['div', true, "", "class = 'block'", "", [objH3, objImg, objP]]
+            var objDiv3 = ['div', true, "", "id = 'wrapper' class = 'wrap'", "", [objDiv1, objDiv2]]
+            var objHtmlCode = new HtmlElement(objH3, objImg, objP, objA, objDiv1, objDiv2, objDiv3)
+
+            // Get full code block (CSS + HTML)
+            objHtmlBlock = new HtmlBlock(listFullCssStyles, objHtmlCode)
+            console.log(objHtmlBlock.getCode())
 
         </script>
     </body>
