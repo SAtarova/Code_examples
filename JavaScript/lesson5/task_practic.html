@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <script>  
+
+        /* task1
+        class Button
+        {
+            constructor(sWidth, sHeight, sText)
+            {
+                this.sWidth  = sWidth
+                this.sHeight = sHeight
+                this.sText   = sText
+            }
+            showBtn()
+            {
+                document.write(`<button style= 'width: ${this.sWidth}; height: ${this.sHeight}'>${this.sText}</button>`)
+            }
+        }
+
+        class BootstrapButton extends Button
+        {
+            constructor(sWidth, sHeight, sText, sColor)
+            {
+                super(sWidth, sHeight, sText)
+                this.sColor = sColor
+            }
+            showBtn()
+            {
+                document.write(`<button style= 'width: ${this.sWidth}; height: ${this.sHeight}; background-color: ${this.sColor}'>
+                    ${this.sText}
+                    </button>`)
+            }
+        }
+
+        var objButton = new Button('300px', '300px', 'hisdefjopkc')
+        objButton.showBtn()
+
+        var objButton2 = new Button('200px', '200px', 'fwefgbrtuj')
+        objButton2.showBtn()
+
+        var objBootstrapButton = new BootstrapButton('300px', '300px', 'hisdefjopkc', 'green')
+        objBootstrapButton.showBtn()
+
+        /* task2 */
+        class Figure
+        {
+            constructor(sName, nSideCount, nSideLength)
+            {
+                this._sName      = sName
+                this.nSideCount  = nSideCount
+                this.nSideLength = nSideLength
+
+            }
+            get sNameFigure()
+            {
+                return this._sName
+            }
+            Attributes()
+            {
+                return this.nSideCount + ' ' + this.nSideLength
+            }
+            // Squear
+            // {
+            //     return 
+            // }
+        }
+
+        var objFigure = new Figure('Rectangle', 3, 54)
+        console.log(objFigure.sNameFigure)
+        console.log(objFigure.Attributes())
+
+        </script>
+    </body>
+</html>
+

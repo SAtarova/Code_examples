@@ -1,0 +1,147 @@
+﻿<!doctype html>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <script>
+
+        /* task1 */
+        nUserAge = +prompt("Enter your age: ", "")
+        if (0 < nUserAge && nUserAge < 12) alert("You are baby");
+        else if (12 <= nUserAge && nUserAge < 18) alert("You are child");
+        else if (18 <= nUserAge && nUserAge < 60) alert("You are adult");
+        else if (60 <= nUserAge) alert("You are old");
+        else alert("Entered incorrecting age")
+
+        /* task2 */
+        nNumber = +prompt("Enter the number (0 - 9): ", "")
+        switch (nNumber){
+            case 0: alert(")");
+                break;
+            case 1: alert("!");
+                break;
+            case 2: alert("@");
+                break;
+            case 3: alert("#");
+                break;
+            case 4: alert("$");
+                break;
+            case 5: alert("%");
+                break;
+            case 6: alert("^");
+                break;
+            case 7: alert("&");
+                break;
+            case 8: alert("*");
+                break;
+            case 9: alert("*");
+                break;
+            default: alert("Input error. Need to enter any integer number from 0 to 9")}        
+
+        /* task3 */
+        nNumber      = +prompt("Enter three-digit number: ", "")
+        nLenOfNumber = nNumber.toString().length
+        if (nLenOfNumber != 3) alert("Error. Need to enter three-digit number")
+        listDigits  = [];
+        listRepited = [];
+        for (nDigit of ('' + nNumber).split('')){
+            if (listDigits.includes(nDigit) && !listRepited.includes(nDigit)) listRepited.push(nDigit);
+            else listDigits.push(nDigit)}        
+        if (listRepited.length == 0) alert("The entered number has no repeated digits");
+        else alert("The entered number contains repeated digits, it is: " + listRepited.join(', '));
+
+        /* task4 */
+        nEnteredYear = +prompt("Enter any year: ", "")
+        if ((nEnteredYear % 400 == 0) || (nEnteredYear % 4 == 0 && nEnteredYear % 100 != 0))
+            alert("Entered year is a leap year"); 
+        else alert("Entered year is not a leap year")
+                
+        /* task5 */
+        nNumber = +prompt("Enter five-digit number: ", "")
+        nLenOfNumber = nNumber.toString().length
+        if (nLenOfNumber != 5) alert("Error. Need to enter five-digit number")
+        nSourceNumber = nNumber
+        nResult       = 0
+        while (nNumber) {
+            nResult *= 10;
+            nResult += nNumber % 10;
+            nNumber = Math.floor(nNumber / 10);}
+        if (nResult == nSourceNumber) alert("The number is polyndrom");
+        else alert("The number is not polyndrom")        
+
+        /* task6 */
+        nUsdSum = +prompt("Enter USD amount: ", "")
+        sCurSum = prompt("Enter a new currency (EUR, UAN or AZN): ", "")
+        dictCurrency = {"USD": 90,"EUR": 96, "UAN": 13, "AZN": 55}
+        if (sCurSum.toUpperCase() in dictCurrency)
+            alert("It's ': " + (nUsdSum*dictCurrency["USD"]/dictCurrency[sCurSum]) + " " + nCurSum)
+        else
+            alert("Entered currency is not correct")        
+
+        /* task7 */
+        nBuySumm = +prompt("Enter amount you bought: ", "")
+        nSale    = 0
+        nPercent = 0
+        if (200 <= nBuySumm && nBuySumm < 300) nPercent = 3;
+        if (300 <= nBuySumm && nBuySumm < 500) nPercent = 5;
+        if (nBuySumm >= 500)       nPercent = 7;
+        console.log(nPercent)
+        if (nPercent)
+            nSale = nBuySumm/100*nPercent            
+        alert("Your amount due: " + (nBuySumm - nSale))        
+
+        /* task8 */
+        nCircleLen  = +prompt("Enter a circle length: ", "")
+        nSquarePer  = +prompt("Enter a square perimeter: ", "")
+        nSquareSize = nSquarePer/4
+        nCircleRad  = nCircleLen/(2*Math.PI)
+        if (nSquareSize >= nCircleRad*2) 
+            alert("The circle may be wrote in the square")
+        else 
+            alert("The circle may not be wrote in the square")
+        
+
+        /* task9 */
+        alert("You need to answer some questions:")
+        nScore = 0
+        nYear  = +prompt("What year is now (four-digit): ", "")
+        if (nYear == 2023) nScore += 2
+        else alert("Your answer is wrong")
+        nСentury = +prompt("What сentury is now (two-digit): ", "")
+        if (nСentury == 21) nScore += 2
+        else alert("Your answer is wrong")
+        nWings = +prompt("How many wing has a bird (one-digit): ", "")
+        if (nWings == 2) nScore += 2
+        else alert("Your answer is wrong")
+        alert("Your score = " + nScore)        
+
+        /* task10 */
+        nDate  = prompt("Enter a current date: ", "YYYY-MM-DD")
+        listDate = Array.from(nDate)
+        nYear  = +listDate.slice(0, 4).join("")
+        nMonth = +listDate.slice(5, 7).join("")
+        nDay   = +listDate.slice(8,).join("")
+        bLeap  = false
+        bEven  = false
+        /*Define leap year*/
+        if ((nYear % 400 == 0) || (nYear % 4 == 0 && nYear % 100 != 0)) bLeap = true
+        /*Define month*/
+        if (nMonth % 2) bEven = true
+        /*Define next date*/
+        if ((nDay == 30 && bEven) || (nDay == 31) || (nDay == 28 && bLeap))
+            { if (nMonth != 12)
+                {nDay    = 1
+                 nMonth += 1}
+              else 
+                {nDay   = 1
+                 nMonth = 1
+                 nYear += 1}
+            }           
+        else
+            {nDay += 1}          
+        alert("Next date is " + nYear + "-" + nMonth + "-" + nDay)
+
+        </script>
+    </body>
+</html>

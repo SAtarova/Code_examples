@@ -47,7 +47,7 @@
             objFillMarker.FillMarker(sNewColor)            
             objFillMarker.PrintString('I write by marker. Now we use ' + sColor + ' color.')
 
-            /* task2 */
+            /* task2 
             class ExtendedDate extends Date
             {
                 constructor(nYear, nMonth, nDay) 
@@ -55,9 +55,6 @@
                     super()
 
                     // Get current date
-                    let nTodayYear  = this.getFullYear()
-                    let nTodayMonth = this.getMonth()
-                    let nTodayDay   = this.getDate()
                     this.objTodayDate= this.getTime()
 
                     // Redefine current with input date
@@ -69,6 +66,12 @@
                     this.nInputDay   = this.getDate()
                     this.objInputDate = this.getTime()
                 }
+                TextDayMonth()
+                {
+                    var dictMonthes = {1: 'January', 2: 'February', 3: 'Marth', 4: 'April', 5: 'May', 6: 'June', 
+                    7: 'July', 8: 'August', 9: 'September', 10: 'Octouber', 11: 'November', 12: 'Desember'}
+                    console.log(dictMonthes[this.nInputMonth])
+                }
                 CheckActualDate()
                 {
                 
@@ -78,14 +81,59 @@
                 IncreaseDateOnOneDay()
                 {
                     console.log(this.nInputDay + ' ' + this.nInputMonth)
-                    this.objInputDate.setDate(this.objInputDate.getDate() + 1)
-                    console.log(this.nInputDay + ' ' + this.nInputMonth)
+                    let nNewDate = new Date()
+                    console.log(nNewDate)
+                    this.nInputDay = (this.nInputDay + 1)                    
+                    console.log(this.nInputDay)
+                }
+                LeapYear()
+                {
+                    if ((this.nInputYear % 400 == 0) || (this.nInputYear % 4 == 0 && this.nInputYear % 100 != 0))
+                        console.log("Entered year is a leap year"); 
+                    else console.log("Entered year is not a leap year")
+                }
+
+            }
+
+            objExtendedDate = new ExtendedDate(2024, 10, 23)
+            objExtendedDate.CheckActualDate()
+            objExtendedDate.IncreaseDateOnOneDay()
+            objExtendedDate.LeapYear()
+            objExtendedDate.TextDayMonth()
+
+            /* task3 */
+            class Employee
+            {
+                constructor(sName)
+                {
+                    this.sName = sName
                 }
             }
 
-            objExtendedDate = new ExtendedDate(2023, 10, 23)
-            //objExtendedDate.CheckActualDate()
-            objExtendedDate.IncreaseDateOnOneDay()
+            var listEmployees = ['jcdkcfl', 'jfcjgp', 'ghdsyf', 'jghxfa']
+
+            class EmpTable
+            {
+                constructor(listEmployees)
+                {
+                    this.listEmployees = listEmployees
+                }
+                getHtml()
+                {   
+                    let sHtml = '<ul>\n'
+                    for (let i = 0; i < listEmployees.length; i++)
+                    [
+                        sHtml += `<li>${listEmployees[i]}</li>\n`
+                    ]
+                    sHtml += '</ul>'
+                    console.log(sHtml)
+                    return sHtml
+
+                }
+            }
+
+            objEmpTable = new EmpTable()
+            objEmpTable.getHtml()
 
         </script>
     </body>
