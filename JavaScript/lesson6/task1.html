@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+    <style>
+        #d1 
+        {
+	      background: Bisque;
+	      height: 100px;
+          width:  500px;
+	      margin: 10%;
+          padding-top: 20px;
+	    }
+        #enter_name
+        {
+            font-size: 20px;
+            margin-left: 50px;
+        }
+        #input_name 
+        {   
+            width: 400px; 
+            height: 30px; 
+            margin-left: 50px;
+            margin-top: 15px;
+            font-size: 25px;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div id = "d1">
+            <span id = "enter_name">Enter your name (Name can't contain digits'):</span><br>
+            <div>                    
+                 <input type = "text" id = "input_name" name = "name" onkeyup = "this.value = this.value.replace(/\d+/g,'')"/>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task5</title>
+    <style>
+        #books
+        {
+            font-family: cambria;
+        } 
+        li
+        {
+            cursor: pointer;
+        }
+        .selected
+        {
+            background: orange
+        }
+    </style>
+</head>    
+<body>
+    <ol id = "books">
+        <li>"JavaScript for Kids: A Playful Introduction to Programming" by Nick Morgan</li>
+        <li>"Eloquent JavaScript: A Modern Introduction to Programming" by Marijn Haverbeke</li>
+        <li>"JavaScript: The Good Parts" by Douglas Crockford</li>
+        <li>"Programming JavaScript Applications: Robust Web Architecture with Node, HTML5, and Moderns JS Eric Elliott</li>
+        <li>"Effective JavaScript: 68 specific Ways to Harness the Power of JavaScript" by David Herman</li>
+        <li>"JavaScript: The Definitive Guide" by David Flanagan</li>
+        <li>"You Don't Know JS" by Kyle Simpson</li>
+    </ol>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() 
+        {
+            var objBooks = document.querySelector("#books");
+            var dictBooks = [...objBooks.querySelectorAll("li")];
+
+            objBooks.addEventListener("click", function(event)
+            {
+                let objTarget = event.target;
+
+            for (i = 0; i < dictBooks.length; i++)
+            {
+                if (dictBooks[i] == objTarget)
+                    dictBooks[i].classList.add("selected")
+                else
+                    dictBooks[i].classList.remove("selected")
+            }
+            })
+        })
+    </script>
+</body>
+</html>

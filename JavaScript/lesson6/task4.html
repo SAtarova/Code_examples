@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task4</title>
+    <style>
+        body
+        {
+            margin: 10%;
+        }
+        #traffic_lights
+        {            
+            height: 100px;
+            width:  265px;
+            border-radius: 8px;
+            background: Gainsboro;
+            border: 2px solid Gray;
+            margin-right: 30px;
+            float: left;
+        }
+       #buttom
+       {
+            height: 100px;
+            width:  80px;
+            border-radius: 8px;
+            background: DarkGray; 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            float: left;
+            box-shadow: 3px 3px Gray;
+            cursor: pointer;
+       }
+       span
+       {
+           font-size: 20px;           
+       }
+       #buttom:hover
+       {
+            background: DimGray;
+       }
+       #red, #yellow, #green
+       {
+           border-radius: 50%;
+           height: 70px;
+           width: 70px;
+           float: left;
+           margin-right: 12px;
+           margin-top: 15px; 
+           background: grey;
+       }
+       #red
+       {           
+           margin-left: 15px;
+           background: red;
+       }
+    </style>
+</head>    
+<body>
+    <div id = "traffic_lights"> 
+        <div id = "red"></div>
+        <div id = "yellow"></div>
+        <div id = "green"></div>
+    </div>
+    <div id = "buttom" onclick = "SwitchLights()">  
+        <span>NEXT</span>
+    </div>
+    <script>
+        function SwitchLights()
+        {
+            if (red.style.background == 'red')
+            {
+                red.style.background = 'grey'
+                yellow.style.background = 'yellow'
+            }
+            else if (yellow.style.background == 'yellow')
+            {
+                yellow.style.background = 'grey'
+                green.style.background = 'green'
+            }
+            else
+            {
+                green.style.background = 'gray'
+                red.style.background = 'red'
+            }
+        }
+    </script>
+</body>
+</html>

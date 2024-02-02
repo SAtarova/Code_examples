@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2</title>
+    <style>
+        #main_box
+        {
+	        background: DimGray;
+	        height: 150px;
+            width:  410px;
+	        margin: 10%;
+            padding: 40px;
+            position: relative;
+	    }
+        #modal
+        {
+            background: Gainsboro;
+	        height: 100px;
+            width:  410px;
+            bottom: 40px;
+            position: absolute;
+            margin: auto;
+            display: block;
+            padding-top: 5px;            
+        }
+        #open
+        {
+            background: Gray;
+            border: 1px solid DarkSlateGray;
+            border-radius: 3px;
+            font-size: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            position: absolute;
+        }
+        #open:hover 
+        {
+            background: DarkSlateGray;
+        }
+        #open:active #modal 
+        {
+            display: block;
+        }
+        #modal
+        {
+            display: none;
+        }
+        
+        span
+        {
+            font-size: 30px;
+            font-weight: bold;
+            margin: auto;
+            display: block;
+            text-align:center;
+        }
+        #close
+        {
+            width:  330px;
+            font-size: 20px;
+            margin: auto;
+            display: block;
+        }
+    </style>
+</head>    
+<body>
+    <div id = "main_box">    
+        <button id = "open" type = "button" onclick = "GetModal()">Open modal</button>
+        <div id = "modal">
+            <span>Hello from Modal Window!</span></br>
+            <button id = "close" type = "button" onclick = "HideModal()">Close</button>
+        </div>
+    </div>
+    <script>
+        function GetModal()
+        {
+            modal.style.display = "block";
+        }
+        function HideModal()
+        {
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>

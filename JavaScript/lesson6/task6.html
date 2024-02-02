@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task6</title>
+    <style>
+        #botton1, #botton2
+        {
+            font-size: 20px;
+            height: 40px;
+            width:  100px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            float: left;
+            background: LightGray;
+            border: 1px solid DarkSlateGray;
+        }
+        #botton1
+        {
+            margin-left: 100px;
+            margin-right: 30px;
+            margin-top: 50px;
+        }
+        #botton1:hover
+        {
+            background: DarkGray;
+        }
+        #botton2:hover
+        {
+            background: DarkGray;
+        }
+        .tooltip
+        {
+            background: DarkOrchid;
+            text-align: center;
+            padding: 10px, 20px;
+            position: fixed;
+            width:  100px;
+        }
+
+    </style>
+</head>    
+<body>
+    <div>
+        <botton id = "botton1" data-tooltip = "Tool tip 1">Botton1</botton>
+        <botton id = "botton2" data-tooltip = "Tool tip 2">Botton2</botton>
+    </div>
+    <script> 
+        let objToolkitElement = null;
+
+        document.onmouseover = function(event)
+        {
+            let target = event.target;
+            let objTagetEvents = target.dataset.tooltip;
+            console.log(objTagetEvents);
+
+            if (objTagetEvents)
+            {
+                let objTooltipElement       = document.createElement('div');
+                objTooltipElement.className = 'tooltip';
+                objTooltipElement.innerHTML = objTagetEvents;
+                document.body.append(objTooltipElement);
+
+                let objCoordinates = target.getBoundingClientRect();
+                let nTooltipTop    = objCoordinates.top - objTooltipElement.offsetHeight - 8
+
+                if (nTooltipTop <= 0)
+                nTooltipTop = objCoordinates.top + objTooltipElement.offsetHeight + 48
+
+                    objTooltipElement.style.top = nTooltipTop + 'px'
+                console.log(nTooltipTop);
+            }
+        }
+
+        document.onmouseout = function(eventout)
+        {
+            if (objTooltipElement)
+            {
+                objTooltipElement.remove();
+                objTooltipElement = null;
+            }
+        }
+    </script>
+</body>
+</html>
