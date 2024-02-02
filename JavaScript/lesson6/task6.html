@@ -48,7 +48,7 @@
         <botton id = "botton2" data-tooltip = "Tool tip 2">Botton2</botton>
     </div>
     <script> 
-        let objToolkitElement = null;
+        let objTooltipElement = null;
 
         document.onmouseover = function(event)
         {
@@ -73,12 +73,11 @@
                 console.log(nTooltipTop);
             }
         }
-
-        document.onmouseout = function(eventout)
+        document.onmouseout = function(objTooltipElement)
         {
             if (objTooltipElement)
             {
-                objTooltipElement.remove();
+                objTooltipElement.remove;
                 objTooltipElement = null;
             }
         }
