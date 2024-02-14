@@ -1,18 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="shortcut icon" href="images/favicon.png">
     <style>
-        html {background-image: url(icons\a-happy-racoon-driving-cartoon_671039-348.webp);
-              background-repeat: no-repeat;
-              background-size: 100% 100%;
-              background-attachment: scroll;
-              height:  100px;}      
+        * {
+            box-sizing: border-box
+        }
+        main {
+            background-color: chocolate;
+            margin: 10px;
+            padding: 20px;
+            width: 100%;
+        }
+        header {
+            height: 200px;
+            background-color: sienna;
+        }
+        nav {
+            background-color: cadetblue;
+            height: 100px;
+        }
+        section {
+            height: 100px;
+            background-color: cadetblue;
+        }
+        footer {
+            background-color: burlywood;
+        }
+        .left-side {
+            display: grid;
+            padding: 10px;
+        }
+        aside {
+            background-color: blueviolet;
+            margin: 20px 0;
+        }
+        .container {
+            display: flex;
+            padding: 0;
+        } 
+
     </style>
 </head>
+
 <body>
-   
+    <header>
+        <h1>HEADER</h1>
+    </header>
+    <nav>
+        <h1>MENU</h1>
+    </nav>
+    <div class="container">
+        <div class="left-side">
+            <aside id="a1"><h1>ASIDE 1</h1></aside>
+            <aside id="a2"><h1>ASIDE 2</h1></aside>
+        </div>
+        <main>
+            <h1>MAIN CONTENT</h1>
+            <section>
+                <h1>SECTION 1</h1>
+            </section>
+            <section>
+                <h1>SECTION 2</h1>
+            </section>
+        </main>
+        <aside id="a3"><h1>ASIDE 3</h1></aside>
+    </div>  
+    <footer>
+        <h1>FOOTER</h1>
+    </footer>
 </body>
+
 </html>

@@ -1,0 +1,3 @@
+let sOurPlanet = ""
+
+let SCurrentUserName = ""

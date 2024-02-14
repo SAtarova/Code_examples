@@ -5,20 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task3</title>
     <style>
-        body
+        #field
         {
-            height: 100%;
-            width:  100%;
-            background: DarkGreen;
-            margin: 0;
+            position: relative;
+            max-height: 100%;
+            max-width:  100%;
+            display:block; 
+            margin:auto;
         }
-
+        #ball
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100px;
+            width:  100px;
+            transition: all 0.5s;
+        }
     </style>
 </head>    
 <body>
-    <div id = "footfield">        
-    </div>
+    <img id = "field" src = "images\\football_field.jpg" alt = "footboll_field">
+    <img id = "ball"  src = "images\\ball.png" alt = "ball">
+    
     <script>
+        field.addEventListener("click", function(event)
+        {
+            // Get click coordinates 
+            let target    = event.target;
+            let nNewBallX = event.pageX;
+            let nNewBallY = event.pageY;
+
+            // Set new coordinates for ball (50 - shift left/top coner to the center of ball)
+            ball.style.left = nNewBallX - 50 + "px";
+            ball.style.top  = nNewBallY - 50 + "px";
+        })
     </script>
 </body>
 </html>

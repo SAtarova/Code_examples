@@ -9,13 +9,11 @@
         {
             font-size: 20px;
             height: 40px;
-            width:  100px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            width:  100px;            
             float: left;
             background: LightGray;
             border: 1px solid DarkSlateGray;
+            cursor: pointer;
         }
         #botton1
         {
@@ -23,61 +21,91 @@
             margin-right: 30px;
             margin-top: 50px;
         }
-        #botton1:hover
+        #botton1:hover, #botton2:hover
         {
             background: DarkGray;
         }
-        #botton2:hover
+        .tooltip, #botton1, #botton2
         {
-            background: DarkGray;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         .tooltip
         {
             background: DarkOrchid;
             text-align: center;
-            padding: 10px, 20px;
             position: fixed;
             width:  100px;
+            height: 40px;
         }
-
+        .tooltip::after
+        {
+            content: " ";
+            position: absolute;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;            
+        }
     </style>
 </head>    
 <body>
-    <div>
-        <botton id = "botton1" data-tooltip = "Tool tip 1">Botton1</botton>
-        <botton id = "botton2" data-tooltip = "Tool tip 2">Botton2</botton>
-    </div>
+    <botton id = "botton1" data-tooltip = "Tool tip 1">Botton1</botton>
+    <botton id = "botton2" data-tooltip = "Tool tip 2">Botton2</botton>
     <script> 
-        let objTooltipElement = null;
+        let objTooltipElement;
 
+        // Mouse over element
         document.onmouseover = function(event)
         {
+            // Get event and its tooltip 
             let target = event.target;
             let objTagetEvents = target.dataset.tooltip;
-            console.log(objTagetEvents);
 
+            // If tooltip is present for current event
             if (objTagetEvents)
             {
-                let objTooltipElement       = document.createElement('div');
+                // Append tag for tooltip in the html code
+                objTooltipElement           = document.createElement('div');
                 objTooltipElement.className = 'tooltip';
                 objTooltipElement.innerHTML = objTagetEvents;
                 document.body.append(objTooltipElement);
 
+                // Get coordinates of button
                 let objCoordinates = target.getBoundingClientRect();
-                let nTooltipTop    = objCoordinates.top - objTooltipElement.offsetHeight - 8
 
+                // Define place for button tooltip and tooltip::after(cssRules[5])
+                let nTooltipTop    = objCoordinates.top - objTooltipElement.offsetHeight - 8;
+                document.styleSheets[0].cssRules[5].style.top = '100%';
+                document.styleSheets[0].cssRules[5].style.bottom = ''
+                document.styleSheets[0].cssRules[5].style.borderColor = 'DarkOrchid transparent transparent transparent';
+
+                // Correct place for top button
                 if (nTooltipTop <= 0)
-                nTooltipTop = objCoordinates.top + objTooltipElement.offsetHeight + 48
+                {
+                    nTooltipTop = objCoordinates.top + target.offsetHeight + 8;
+                    document.styleSheets[0].cssRules[5].style.top = ''
+                    document.styleSheets[0].cssRules[5].style.bottom = '100%';
+                    document.styleSheets[0].cssRules[5].style.borderColor = 'transparent transparent DarkOrchid transparent';
+                }
+                                
+                objTooltipElement.style.top = nTooltipTop + 'px';               
 
-                    objTooltipElement.style.top = nTooltipTop + 'px'
-                console.log(nTooltipTop);
+                //Set left coordinate for button tooltip
+                let nTooltipLeft = objCoordinates.left;
+                objTooltipElement.style.left = nTooltipLeft + 'px';
             }
         }
-        document.onmouseout = function(objTooltipElement)
+
+        // Mouse ouot of element
+        document.onmouseout = function(event)
         {
+            // If event is not undefined
             if (objTooltipElement)
             {
-                objTooltipElement.remove;
+                // Remove tag for tooltip in the html code
+                objTooltipElement.remove();
                 objTooltipElement = null;
             }
         }

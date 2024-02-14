@@ -6,23 +6,25 @@
     <body>
         <script>  
 
-            /* task1 
+            /* task1 */
             class Marker
             {
                 constructor(sColor, nPercent)
                 {
                     this.sColor   = sColor
-                    this.nPercent = 100
+                    this.nPercent = nPercent
+                    console.log(this.sColor)
                 }
                 PrintString(sString)
                 {
-                    let nStringLen = 0.5 * sString.replaceAll(' ', '').length
+                    let nFullStringLen = sString.length
+                    let nStringLen     = 0.5 * sString.replaceAll(' ', '').length                    
 
                     while(nStringLen < this.nPercent)
                     {                                           
                         console.log('%c' + sString, 'font-size: 3em; font-weight: bold; color: ' + this.sColor)
-                        this.nPercent -= 0.5 * nStringLen  
-                    }
+                        this.nPercent -= 0.5 * nStringLen 
+                    }                   
 
                     console.log('%cMarker has not enough toner for you text, need to fill it!', 'color: red')
                 }    
@@ -34,20 +36,22 @@
                 {
                     super(sColor, nPercent)
                 }
-                FillMarker()
+                NewFillMarker(sColor)
                 {
                     this.nPercent = 100
+                    this.sColor   = sColor   
                 }
             }
 
-            var sColor = 'blue'
-            var objFillMarker = new FillMarker(sColor)
+            var nPercent = 100
+            var sColor   = 'blue'
+            var objFillMarker = new FillMarker(sColor, nPercent)
             objFillMarker.PrintString('I write by marker. Now we use ' + sColor + ' color.')
             var sNewColor = 'green'
-            objFillMarker.FillMarker(sNewColor)            
-            objFillMarker.PrintString('I write by marker. Now we use ' + sColor + ' color.')
+            objFillMarker.NewFillMarker(sNewColor)
+            objFillMarker.PrintString('I write by marker. Now we use ' + sNewColor + ' color.')
 
-            /* task2 
+            /* task2 */
             class ExtendedDate extends Date
             {
                 constructor(nYear, nMonth, nDay) 
@@ -104,36 +108,79 @@
             /* task3 */
             class Employee
             {
-                constructor(sName)
-                {
-                    this.sName = sName
-                }
-            }
-
-            var listEmployees = ['jcdkcfl', 'jfcjgp', 'ghdsyf', 'jghxfa']
-
-            class EmpTable
-            {
                 constructor(listEmployees)
                 {
                     this.listEmployees = listEmployees
                 }
+                FillArray(sName)
+                {
+                    this.listEmployees.push(sName)
+                }
+                GetListEmployee()
+                {
+                    return this.listEmployees
+                }
+            }
+            
+            objEmployee = new Employee([])
+            objEmployee.FillArray('jcdkcfl')
+            objEmployee.FillArray('jfcjgp')
+            objEmployee.FillArray('ghdsyf')
+            objEmployee.FillArray('jghxfa')
+            console.log(objEmployee.GetListEmployee())
+
+            class EmpTable
+            {
+                constructor(objEmployee)
+                {
+                    this.objEmployee = objEmployee
+                }
                 getHtml()
-                {   
+                { 
+                    let listTableEmployees = this.objEmployee.listEmployees
                     let sHtml = '<ul>\n'
-                    for (let i = 0; i < listEmployees.length; i++)
-                    [
-                        sHtml += `<li>${listEmployees[i]}</li>\n`
-                    ]
+                    for (let i = 0; i <listTableEmployees.length; i++)
+                    {
+                        sHtml += `\t<li>${listTableEmployees[i]}</li>\n`
+                    }
                     sHtml += '</ul>'
                     console.log(sHtml)
                     return sHtml
+                }
+            }            
 
+            objEmpTable = new EmpTable(objEmployee)
+            objEmpTable.getHtml()
+
+            /* task4 */
+            class StyledEmpTable extends EmpTable
+            {
+                constructor(objEmpTable, listStyles)
+                {
+                    super(objEmpTable)
+                    this.listStyles = listStyles
+                }
+                getStyles(listStyles)
+                {
+                    let sStyles = '<style>\n'
+                    for (let i = 0; i < this.listStyles.length; i++)
+                    {
+                        sStyles += `${this.listStyles[i]}`
+                    }
+                    sStyles += '\n</style>\n'
+                    return sStyles
+                }
+                getHtml()
+                {
+                    let sNewHtml = ''
+                    sNewHtml = this.getStyles(this.listStyles)
+                    sNewHtml += objEmpTable.getHtml()
+                    console.log(sNewHtml)
+                    return sNewHtml
                 }
             }
-
-            objEmpTable = new EmpTable()
-            objEmpTable.getHtml()
+            objStyledEmpTable = new StyledEmpTable(objEmpTable, '\tul li {margin: 0% 5% 0% 5%;\n\t\tpadding: 2%;\n\t\tfont-size: 30px;\n\t\tbackground-color: skyblue;\n\t\tlist-style-type: none;}')
+            objStyledEmpTable.getHtml()
 
         </script>
     </body>

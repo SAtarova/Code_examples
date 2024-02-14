@@ -243,9 +243,10 @@
                 } 
                 
                 objNewTime.nHours += nTimeInHours
+                let nTimeInHours   = Math.floor(objNewTime.nHours / 24)
                        
-                if (objNewTime.nHours > 24)
-                    objNewTime.nHours = objNewTime.nHours - 24
+                if (objNewTime.nHours > nTimeInHours)
+                    objNewTime.nHours = objNewTime.nHours - (24*nTimeInHours)
 
                 alert('Entered ' + GetTime(objTime) + '\nChanged ' + GetTime(objNewTime))
             }
