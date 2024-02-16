@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #top_box{
+            width:  100%;
+            padding: 3%;
+            float: left;
+            background: rgb(153, 106, 67);
+        }
+        h1{
+            text-align: center;
+            color: white;
+        }
+        #input_field{
+            height: 30px;
+            width:  77%;
+            background: white;
+	        font-size: 20px;
+	        padding-left: 20px;
+            float: left;
+            color: gray;
+        }
+        #button{
+            height: 34px;
+            width:  15%; 
+            background: gray;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: White;            
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        #button:hover{
+            background: rgb(177, 176, 176);
+        }
+        ul {
+            list-style-type: none;
+        }
+        li{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .selected
+        {
+            background: gray;
+            text-decoration: line-through;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <div id = "top_box">
+            <h1>
+                My To Do List
+            </h1>
+            <input placeholder="Title..." type = "text" id = "input_field" onfocus = "this.value=''" />                
+            <div id = "button">
+                Add          
+            </div>
+        </div>
+        <ul id = "tasks">             
+        </ul> 
+    </div>
+    <script>
+        let objInput = document.querySelector('input');
+        let objUl    = document.getElementById('tasks');
+
+        <div id = "buttom" onclick = "SwitchLights()">  
+        <span>NEXT</span>
+        </div>
+        
+        button.onclick = function(event)
+        {
+            let sInputTask = objInput.value;
+            console.log(sInputTask)
+
+            objElement = document.createElement('li');
+            objElement.innerHTML = sInputTask;
+            objUl.append(objElement);
+
+            objInnerElement = document.createElement('div');
+            objInnerElement.id = "button_del"
+            objInnerElement.onclick = "DeleteTask()"
+            objElement.append(objInnerElement); 
+            
+            objButtonImgElement = document.createElement('img');
+            objButtonImgElement.
+            objInnerElement.append(objButtonImgElement); 
+        } 
+
+        tasks.onclick = function(event)
+            {
+                let objTasks = document.querySelector("ul");
+                let dictTasks = [...objTasks.querySelectorAll("li")];
+
+                let objTarget = event.target;
+
+            for (i = 0; i < dictTasks.length; i++)
+            {
+                if (dictTasks[i] == objTarget) 
+                {
+                    if (dictTasks[i].classList.contains("selected"))
+                        dictTasks[i].classList.remove("selected")                    
+                    else
+                        dictTasks[i].classList.add("selected")  
+                }
+            }
+            } 
+    </script>
+</body>
+</html>
