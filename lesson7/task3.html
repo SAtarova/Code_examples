@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_task3.css"> 
+</head>
+<body>
+    <form class = "reg_form">
+        <ul id = "registration">
+            <p>Registration form</p>
+            <li>
+                <label for = "user_name"><img src = "icons\\username.png"></label>
+                <input type = "text" id = "user_name" value = "Username"/>
+            </li>
+        
+            <li>
+                <label for = "email_addr"><img src = "icons\\email.png"></label>
+                <input type = "email" id = "email_addr" value = "Email address"/>
+            </li>
+        
+            <li> 
+                <label for = "passw"><img src = "icons\\pswd.png"></label>
+                <input type = "password" id = "passw" value = "" placeholder="Password"/>
+                <input type = "password" id = "conf_passw" value = "" placeholder="Confirm password"/>
+            </li>
+        </ul>
+        <ul id = "person_details">
+            <p>Personal details</p>
+            <li>
+                <input type = "text" id = "first_name" value = "First name"/>
+                <input type = "text" id = "last_name" value = "Last name"/>
+            </li>
+        
+            <li>
+                <select id = "mail">
+                    <option value="" selected disabled hidden>Mail</option>
+                    <option>@mail.ru</option>
+                    <option>@gmail.com</option>
+                    <option>@vk.com</option>
+                    <option>@rambler.ru</option>
+                </select>
+                <input type = "date" id = "input_date" value = "mm\\dd\\yyyy">
+            </li>
+        </ul>
+        <div id = "additional">
+            <div>
+                <input type = "checkbox" id = "news"/>
+                <label for = "news">I want to receive news and spetial offers</label>            
+            </div>
+            <div>
+                <input type = "checkbox" id = "agreement"/>
+                <label for = "agreement">I agree with Terms and Conditions</label>
+            </div>
+        </div>
+        <hr size = 5px color = DarkGray margin = 0></hr>
+        <div id = "button_subm">
+            <button type = "submit" id = "button_submit">SUBMIT</button>
+        </div>
+    </form>
+</body>
+</html>

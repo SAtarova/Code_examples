@@ -43,12 +43,25 @@ div {position: absolute;}
     height: 30px;
     width: 280px;}
 
-#month {}
+#month, #year, #csv {
+    top: 180px;
+    height: 30px;
+    width: 70px;}
+
+#month {    
+    left: 20px;}
+
+#year {
+    left: 100px;}
+
+#csv {
+    left: 180px;}
 
 .inside {color: DarkGray;
-         font-size: 12px; 
-         /*margin-top: 9px;
-         margin-left: 10px*/}
+         font-size: 12px;
+         top: -10px;}
 
-.caption {font-size: 8px;
+.caption {position: absolute;
+          top: -15px;
+          font-size: 15px;
           color: Grey;}

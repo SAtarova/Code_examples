@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <style>
+        thead 
+        {
+            font-weight: bold;
+            margin: 0;
+        }
+        table 
+        {
+            border-collapse: collapse;
+            border-spacing: 0;
+            min-width: 500px;
+            background-color: beige;
+            overflow: scrool
+        }
+        table, th, tr, td
+        {
+            border: 2px solid rgb(165, 162, 162);
+            padding: 10px;
+            background-color: beige;
+        }
+        td
+        /*{
+            background-color: beige;
+        }*/
+    </style>
+</head>    
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Company</th>
+            </tr>
+        </thead>
+        <tbody id = "cells">
+            <tr>
+                <td id = "td_1">Bill</td>
+                <td id = "td_2">Gates</td>
+                <td id = "td_3">Microsoft</td>
+            </tr>
+            <tr>
+                <td id = "td_4">Timothy</td>
+                <td id = "td_5">Cook</td>
+                <td id = "td_6">Apple</td>
+            </tr>
+            <tr>
+                <td id = "td_7">Lary</td>
+                <td id = "td_8">Page</td>
+                <td id = "td_9">Google</td>
+            </tr>
+            <tr>
+                <td id = "td_10">Mark</td>
+                <td id = "td_11">Zukerberg</td>
+                <td id = "td_12">Facebook</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>        
+        let sNameId = ''
+
+        for (let i = 1; i <= 12; i++)
+        {
+            sNamedId = window["td_" + i] 
+
+            sNamedId.addEventListener("mouseover", function() {
+                this.style.backgroundColor="PeachPuff";
+            });
+            sNamedId.addEventListener("mouseout", function() {
+                this.style.backgroundColor="beige";
+            });
+        }
+    </script>
+</body>
+</html>

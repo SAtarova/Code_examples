@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;  
+}
+
+.reg_form{
+	width: 100%;
+    height: 100%;
+	padding: 30px;
+	background: Gainsboro;
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	position: relative;
+	display: block;
+}
+
+p {
+	font-size: 30px;
+}
+
+#registration,
+#person_details,
+#button_subm{
+	display: inline-block;
+	margin-bottom: 40px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+img {height: 20px;
+     width: 20px;
+}
+
+input,
+select{background: Gainsboro;
+	   margin-bottom: 40px;
+	   margin-right: 20px;
+	   color: DarkGray;
+	   font-size: 16px;
+	   padding-left: 20px;
+	   border: none;
+       border-bottom: 1px solid Grey;
+
+#passw,
+#conf_passw{
+	color: DarkGray;
+}
+
+}
+#user_name + label,
+#email_addr + label{
+	display: block;
+	width: 100%;}
+
+#person_details{
+	vertical-align:top;
+}
+
+#person_details p{
+	margin-bottom: 38px;
+}
+
+#first_name,
+#last_name,
+#mail,
+#input_date{
+	width: 45%;
+}
+
+button{
+	position: absolute;
+	width: 100px;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+	margin: 40px;
+	bottom: 0;
+    right: 0;
+	background: Teal;
+    color: white
+}
+
+button:hover{
+	background: Turquoise;
+	cursor: pointer;
+}
+

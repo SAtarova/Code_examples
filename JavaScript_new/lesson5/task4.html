@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #calc{
+            width:  244px;
+            background-color: Gainsboro;
+        }
+        #calc_out{
+            height: 30px;
+            width:  221px;
+            background: beige;
+	        font-size: 30px;
+	        padding-left: 20px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+        table 
+        {
+            border-collapse: collapse;
+            border-spacing: 0;
+            background-color: beige;
+        }
+        table, tr, td, #calc, #calc_out
+        {
+            border: 1px solid rgb(165, 162, 162);
+            padding: 10px;
+        }
+        td
+        {
+            height: 40px;
+            width:  40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id = "calc">
+        <div id = "calc_out">
+            0
+        </div>
+        <table>
+            <tbody id = "cells">
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>+</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>*</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td colspan = "2">=</td>
+                    <td>/</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // Get input and output variables
+        var objTable      = document.querySelector("#cells");
+        var objFullOutput = document.getElementById('calc_out');
+        let sOutput       = ''
+        let sResult       = ''
+        let sCalculationString = ''
+
+        // Read content of document
+        document.addEventListener("DOMContentLoaded", function() 
+        {
+            // Do if click
+            objTable.addEventListener("click", function(event)
+            {
+                // Get event values
+                let sInputValue = event.target.innerText;
+                sOutput += sInputValue;
+
+                // Output event value in the calculated window
+                objFullOutput.innerHTML = sOutput;
+
+                // Stop enter if '=' was clicked
+                if (sInputValue == '=')
+                    sCalculationString = objFullOutput.innerText;
+
+                    // Remove last '='
+                    sCalculationString = sCalculationString.slice(0,-1)
+                    console.log(sCalculationString)
+
+                    // Calculate indexes of signs
+                    nPlusIndex  = sCalculationString.indexOf('+')
+                    nMinusIndex = sCalculationString.indexOf('-')
+                    nMultIndex  = sCalculationString.indexOf('*')
+                    nDivIndex   = sCalculationString.indexOf('/')
+
+                    switch(sResult)
+                    {
+                        case (nPlusIndex >= 0)
+                            sCalculationString.slice(0,nPlusIndex) + sCalculationString.slice(nPlusIndex + 1, )
+                    }
+                    console.log(sResult)
+            
+            })  
+        })
+        
+    </script>
+</body>
+</html>

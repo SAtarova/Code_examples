@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_task2.css"> 
+</head>
+<body>
+    <div id = "inputs">
+        <div>
+            <label for = "input_sleep">Inputs:</label></br>
+            <input type = "text" id = "input_sleep" value = "Enter some text" required pattern="[A-Za-z]+"/>
+        </div>
+        <div>
+            <label for = "input_valid"></label></br>
+            <input type = "text" id = "input_valid" value = "Valid text"/>
+        </div>
+        <div>
+            <label for = "input_invalid"></label></br>
+            <input type = "text" id = "input_invalid" value = "Invalid text"/>
+        </div>
+    </div>
+    <div id = "checkboxes">
+        <div>
+            <label>Check boxes:</label></br>
+            <input type = "checkbox" id = "checkboxe_on"/>
+            <label for = "checkboxe_on">Subscribe</label>            
+        </div>
+        <div>
+            <label></label></br>
+            <input type = "checkbox" id = "checkboxe_off"/>
+            <label for = "checkboxe_off">Subscribe</label>
+        </div>
+    </div>
+    <div id = "radio_buttons">
+        <div>
+            <label for = "radio_on">Radio buttons:</label></br>
+            <span>Gender:</span>
+            <input type = "radio" id = "radio_on" checked/>
+            <span>Male</span>
+        </div>
+        <div>
+            <label for = "radio_off"></label></br>
+            <input type = "radio" id = "radio_off" disabled/>
+            <span>Famale</span>
+        </div>
+    </div>
+    <div id = "buttons">
+        <div>
+            <label for = "button_green1">Buttons:</label></br>
+            <button id = "button_green1">Active</button>
+        </div>
+        <div>
+            <label for = "button_green2"></label></br>
+            <button id = "button_green2">Hover</button>
+        </div>
+        <div>
+            <label for = "button_red1"></label></br>
+            <button id = "button_red1">Danger</button>
+        </div>
+        <div>
+            <label for = "button_red2"></label></br>
+            <button id = "button_red2">Hover</button>
+        </div>
+        <div>
+            <label for = "button_disabled"></label></br>
+            <button id = "button_disabled" disabled>Disabled</button>
+        </div>     
+        <div>
+            <label for = "button_cicle_green"></label></br>
+            <button id = "button_cicle_green">+</button>
+        </div>
+        <div>
+            <label for = "button_cicle_red"></label></br>
+            <button id = "button_cicle_red">-</button>
+        </div>
+    </div>
+    <div id = "text_area">
+        <div>
+            <label for = "text_area">Text area:</label></br>
+            <textarea id = "text_area" rows="10" cols="60"/>Enter some text</textarea>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;  
+}
+
+#form_with_forms {
+    
+     height: 100%
+    }
+
+label{
+      font_size: 20px;
+      font-weight: bold;
+      margin: 10px}
+
+#inputs, #checkboxes, #radio_buttons, #buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 500px;
+    margin-bottom: 30px}
+
+input[type="text"] {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      margin: 10px;
+      border-radius: 4px;
+      border: 1px solid DarkGray;
+      height: 30px;
+      width: 150px;
+      }
+
+#input_sleep{
+    color: DarkGray}
+
+/*#input_sleep:valid {
+    border-color: Green;
+    color: Green;
+    background-image: url("icons\\valid.png");}
+
+#input_sleep:invalid {
+    border-color: Red;
+    color: Red;
+    background-image: url("icons\\invalid.png");}*/
+
+#input_valid{
+    color: Green;
+    border-color: Green;
+    background-image: url("icons\\valid.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 30px 30px}
+
+#input_invalid{
+    color: Red;
+    border-color: Red;
+    background-image: url("icons\\invalid.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 30px 30px}
+
+#checkboxe_on, #checkboxe_off{
+    z-index: -1;
+    opacity: 0;}
+
+#checkboxe_on + label,
+#checkboxe_off + label{
+    display: inline-flex;
+    align-items: center;
+    user-select: none;}
+
+#checkboxe_on + label::before, 
+#checkboxe_off + label::before{
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 3px;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;    
+    background-size: 50% 50%;}
+
+#checkboxe_on+label::before{
+    background-position: right center;
+    background: linear-gradient(to right, green 50%, transparent 50%);
+}
+
+#checkboxe_off+label::before{
+    background-position: left center;
+    background: linear-gradient(to left, red 50%, transparent 50%)
+}
+
+button{
+    width: 75px;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+    margin: 5px;
+    color: white}
+
+#button_green1{
+    background: Green}
+
+#button_green2{
+    background: DarkGreen}
+
+#button_green2:hover {
+    background: DarkGreen}
+
+#button_red1{
+    background: Red}
+
+#button_red2{
+    background: Maroon}
+
+#button_green2:hover {
+    background: Maroon}
+
+#button_disabled{
+    background: DarkGray}
+
+#button_cicle_green,
+#button_cicle_red{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px}
+
+#button_cicle_green{
+    background: Green}
+
+#button_cicle_red{
+    background: Red}
+
+textarea{
+    color: DarkGray;
+    margin: 10px}

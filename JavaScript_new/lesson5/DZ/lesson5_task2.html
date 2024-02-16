@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2</title>
+    <style>
+    </style>
+</head>    
+<body>
+    <script>
+        function GetSimpleNumbers(nNumber)
+        {
+            let listSimples = []
+            let bIsNotPotentialSimple
+
+            for (let i = 2; i < nNumber; i++)
+            {
+                bIsNotPotentialSimple = false
+
+                for (let j = 2; j < i; j++)
+                {
+                    if ((i % j) == 0)
+                    {
+                        bIsNotPotentialSimple = true                                                                                                                    
+                    }
+                } 
+                if (!bIsNotPotentialSimple)
+                {
+                    listSimples.push(i)
+                }
+            }
+            if (listSimples)
+            {
+                let setSimples =  new Set(listSimples);
+                listSimples = [... setSimples];
+                alert('The simple numbers from range ' + nNumber + ' are ' + listSimples.join(', '))
+            }
+            else
+                alert('The simple numbers  are absent in the range ' + nNumber)
+        }
+
+        GetSimpleNumbers(15)
+        GetSimpleNumbers(100)
+    </script>
+</body>
+</html>

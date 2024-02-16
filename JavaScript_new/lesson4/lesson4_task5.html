@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task5</title>
+    <style>
+    </style>
+</head>    
+<body>
+    <script>
+        let login = prompt('Enter your login:')
+        if (login == null || login == '') 
+            alert ('Отменено')
+        else if (login == 'Admin')
+        {
+            let password = prompt('Enter your password:')
+            if (password == null || password == '') 
+                alert ('Отменено')
+            else if (password == 'Я главный')
+                alert ('Здравствуйте!')            
+            else
+                alert('Неверный пароль')
+        }
+        else
+            alert ('Я вас не знаю')
+    </script>
+</body>
+</html>

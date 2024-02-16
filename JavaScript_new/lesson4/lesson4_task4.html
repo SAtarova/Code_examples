@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task4</title>
+    <style>
+    </style>
+</head>    
+<body>
+    <script>
+        let message;
+        let login = prompt('Enter your login:')
+ 
+        // Current code
+        if (login == 'Сотрудник') {
+          message = 'Привет';
+        } 
+        else if (login == 'Директор') {
+          message = 'Здравствуйте';
+        } 
+        else if (login == '') {
+          message = 'Нет логина';
+        } 
+        else {
+          message = '';
+        }
+
+        // Updated code
+        message = (login == 'Сотрудник') ? 'Привет' : (login == 'Директор') ? 'Здравствуйте' : (login == '') ? 'Нет логина' : ''
+
+        alert(message)
+    </script>
+</body>
+</html>
