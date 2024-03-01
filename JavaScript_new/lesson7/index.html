@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum beatae quisquam quam quaerat. Enim quis sapiente sequi ipsam, sed optio odio in iure vero consequuntur quisquam? Sapiente ex, neque suscipit cumque provident minima exercitationem labore accusamus tempore beatae illum, et quibusdam voluptates expedita error? Vero vitae harum aliquam molestiae ducimus?</p>
+    <hr>
+    <div class="comments-block">
+        <div class="comment">
+            <p class="comment__user-name">Alex</p>
+            <p class="comment__date">01.03.2024</p>
+            <p class="comment__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, corrupti!</p>
+            <hr>
+        </div>
+    </div>
+    <form id = "forms_all" action="" class="form" method="post">
+        <label>Name:</label>
+        <input type="text" id = "user_name" name="name">
+        <label>Comment text:</label>
+        <input type="text" id = "user_comment" name="text">
+        <button type="submit" class="submit">Submit</button>
+    </form>
+    <script> 
+        const button = document.querySelector('button')
+        button.addEventListener('click', () => {
+            event.preventDefault()    
+
+            let objName     = document.getElementById('user_name');
+            let objComment  = document.getElementById('user_comment');
+            let comBlock = document.querySelector('.comments-block')
+
+            // Get values
+            let sName    = objName.value;
+            let sComment = objComment.value;
+            let sDate    = new Date()
+
+            // Insert Name text 
+            let objNameText = document.createElement('p');
+            objNameText.innerHTML = "Name:";
+            comBlock.appendChild(objNameText)
+
+            // Create User Name
+            let objNameData = document.createElement('p');
+            objNameData.textContent = objName.value;
+            comBlock.appendChild(objNameData)
+
+            // Create Date
+            let objDate = document.createElement('p');
+            objDate.textContent = sDate
+            comBlock.appendChild(objDate)
+
+            // Insert Comment text 
+            let objCommentText = document.createElement('p');
+            objCommentText.innerHTML = "Comment text:";
+            comBlock.appendChild(objCommentText)
+
+            // Create Comment data
+            let objCommentData = document.createElement('p');
+            objCommentData.textContent = objComment.value;
+            comBlock.appendChild(objCommentData)
+
+            // Create line
+            let objobjString = document.createElement('hr');
+            comBlock.appendChild(objobjString)
+        })       
+    </script>
+</body>
+</html>

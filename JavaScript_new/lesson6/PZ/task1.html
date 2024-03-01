@@ -20,8 +20,7 @@
             width:  77%;
             background: white;
 	        font-size: 20px;
-	        padding-left: 20px;
-            float: left;
+	        padding-left: 20px;            
             color: gray;
         }
         #button{
@@ -41,21 +40,75 @@
         }
         ul {
             list-style-type: none;
+            clear:both;
         }
         li{
             padding-top: 10px;
             padding-bottom: 10px;
             font-size: 20px;
-            cursor: pointer;
+            cursor: pointer;            
+            position: relative;
         }
         .selected
         {
-            background: gray;
+            background: gray;            
+        }
+        .line_through
+        {
             text-decoration: line-through;
         }
-        .button_del{
-            height: 40px;
-            width:  40px;
+        #button_del, #button_done{
+            height: 20px;
+            width:  20px;
+            background: gray;
+            border-radius: 4px;
+            border: 1px solid DarkGray;
+            display: inline-block;
+            position: absolute; 
+            visibility: hidden;
+            cursor: pointer;
+            text-align: center;
+        }
+        #button_del{
+            right: 0.5%;
+        }
+        #button_done{
+            right: 3%;
+        }
+        #button_del:hover, #button_done:hover {
+            background: DarkGray
+        }
+       #img_del, #img_done{            
+            height: 15px;
+            width:  15px;            
+        }
+        #select_all, #remove_all, #clear_all{
+            height: 50px;
+            width:  150px;
+            background: gray;
+            border-radius: 4px;
+            border: 1px solid DarkGray;
+            display: inline-block;
+            position: absolute; 
+            cursor: pointer;
+            margin-top: 3%;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        #select_all:hover, #remove_all:hover{
+            background: DarkGray;
+        }
+        #select_all{
+            left: 20%;
+        }
+        #remove_all{
+            left: 40%;
+        }
+        #clear_all{
+            left: 60%
         }
     </style>
 </head>
@@ -71,55 +124,135 @@
             </div>
         </div>
         <ul id = "tasks">             
-        </ul> 
+        </ul>
+        <div id = "select_all">Select all</div>
+        <div id = "remove_all">Remove all</div>
+        <div id = "clear_all">Clear all</div>
     </div>
     <script>
-        let objInput = document.querySelector('input');
-        let objUl    = document.getElementById('tasks');
+        let objInput  = document.querySelector('input');
+        let objUl     = document.getElementById('tasks');
+        let objTasks  = document.querySelector("ul");
+        let dictTasks = [...objTasks.querySelectorAll("li")];
 
-        function DeleteTask()
-        {
-            pass
-            TODO
-        }
         
+        // Analyze button click for adding new task
         button.onclick = function(event)
         {
+            // Get task value
             let sInputTask = objInput.value;
             console.log(sInputTask)
 
+            // Create li element for new task
             objElement = document.createElement('li');
             objElement.innerHTML = sInputTask;
             objUl.append(objElement);
 
+            // Create div element for button_done button
+            objInnerElementDone = document.createElement('div');
+            objInnerElementDone.id = "button_done"
+            objInnerElementDone.innerHTML = "V"
+            objElement.append(objInnerElementDone);
+
+            // Create div element for button_del button
             objInnerElement = document.createElement('div');
             objInnerElement.id = "button_del"
-            objInnerElement.onclick = "DeleteTask()"
-            objElement.append(objInnerElement); 
-            
-            objButtonImgElement = document.createElement('img');
-            objButtonImgElement.
-            objInnerElement.append(objButtonImgElement); 
+            objInnerElement.innerHTML = "X"
+            objElement.append(objInnerElement);            
         } 
 
+        // Analyze mouse click on existing task
         tasks.onclick = function(event)
-            {
-                let objTasks = document.querySelector("ul");
-                let dictTasks = [...objTasks.querySelectorAll("li")];
+        {
+            //let objTasks  = document.querySelector("ul");
+            let dictTasks = [...objTasks.querySelectorAll("li")];
 
-                let objTarget = event.target;
+            // Get current event
+            let objTarget = event.target;
 
+             // Find li for current task
             for (i = 0; i < dictTasks.length; i++)
             {
-                if (dictTasks[i] == objTarget) 
+                // Select task
+                if (dictTasks[i] == objTarget)
                 {
-                    if (dictTasks[i].classList.contains("selected"))
-                        dictTasks[i].classList.remove("selected")                    
-                    else
-                        dictTasks[i].classList.add("selected")  
+                    dictTasks[i].classList.add("selected")
+
+                    let dictDiv = [...dictTasks[i].querySelectorAll("div")];
+
+                    for (j = 0; j < dictDiv.length; j++){
+                        dictDiv[j].style.visibility = "visible"
+                    }
+
+                }
+
+                // Done/remove selected task 
+                if (dictTasks[i].classList.contains("selected"))
+                {
+                    console.log('Yes')
+
+                    // Through task
+                    if (objTarget.id == "button_done")
+                    {                    
+                        dictTasks[i].classList.add("line_through")
+                    }
+
+                    // Delete task
+                    if (objTarget.id == "button_del")
+                    {
+                        dictTasks[i].remove()
+                    } 
                 }
             }
-            } 
+                
+        }
+
+        remove_all.onclick= function(event)
+        {
+            let dictTasks = [...objTasks.querySelectorAll("li")];
+
+            // Get current event
+            let objTarget = event.target;
+
+             // Find li for current task
+            for (i = 0; i < dictTasks.length; i++)
+            {
+                dictTasks[i].remove()
+            }
+        }
+
+        select_all.onclick= function(event)
+        {    
+            let dictTasks = [...objTasks.querySelectorAll("li")];
+
+            // Get current event
+            let objTarget = event.target;
+
+             // Find li for current task
+            for (i = 0; i < dictTasks.length; i++)
+            {
+                dictTasks[i].classList.add("selected")
+
+                let dictDiv = [...dictTasks[i].querySelectorAll("div")];
+
+                for (j = 0; j < dictDiv.length; j++){
+                  dictDiv[j].style.visibility = "visible"
+                }
+            }
+        }
+        clear_all.onclick= function(event)
+        {  
+            let dictTasks = [...objTasks.querySelectorAll("li")];
+
+            // Get current event
+            let objTarget = event.target;
+
+             // Find li for current task
+            for (i = 0; i < dictTasks.length; i++)
+            {
+                dictTasks[i].classList.remove("selected")
+            }
+        }    
     </script>
 </body>
 </html>
