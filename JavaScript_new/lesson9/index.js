@@ -54,7 +54,6 @@ registerLogin.addEventListener('submit', (e) => {
 })
 
 registerTitle.addEventListener('click', (e) => {
-
     localStorage.removeItem('userData')
 
 })
