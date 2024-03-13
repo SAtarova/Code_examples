@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/imask"></script>
+    <title>Document</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>Login form</h2>
+    <form action="" class="form__sign-in">
+        <label>
+            <span>Login:</span>
+            <input type="text" class="login-input-login form-input">
+            <span class="login-input-login-error"></span>
+        </label>
+        <label>
+            <span>Password:</span>
+            <input type="password" class="login-password-input form-input">
+            <span class="login-password-input-error"></span>
+        </label>
+        <button type="submit" class="login-submit">Send</button>
+    </form>
+</div>
+
+<div class="container">
+    <h2>Comment form</h2>
+    <form action="" class="form__comment">
+        <label>
+            <span>Email:</span>
+            <input type="text" class="comment-email-input form-input">
+            <span class="comment-email-input-error"></span>
+        </label>
+        <label>
+            <span>Phone:</span>
+            <input type="tel" class="comment-phone-input form-input" placeholder="+7(900)000-00-00">
+            <span class="comment-phone-input-error"></span>
+        </label>
+        <label>
+            <span>Message:</span>
+            <textarea cols="5" rows="5" class="comment-message-textarea form-textarea"></textarea>
+            <span class="comment-message-textarea-error"></span>
+        </label>
+        <button type="submit" class="comment-submit">Send</button>
+    </form>
+</div>
+
+<div class="container">
+    <h2>Register form</h2>
+    <form action="" class="form__register">
+        <label>
+            <span>Login:</span>
+            <input type="email" class="register-login-input form-input">
+            <span class="register-login-input-error"></span>
+        </label>
+        <label>
+            <span>Password:</span>
+            <input type="password" class="register-password-input form-input">
+            <span class="register-password-input-error"></span>
+        </label>
+        <label>
+            <span>Repeat password:</span>
+            <input type="password" class="repeat-register-password-input form-input">
+            <span class="repeat-register-password-input-error"></span>
+        </label>
+        <button type="submit" class="repeat-submit">Send</button>
+    </form>
+</div>
+
+<div class="container">
+    <h2>Callback form</h2>
+    <form action="" class="form__callback">
+        <label>
+            <span>Phone:</span>
+            <input type="tel" class="callback-phone-input form-input">
+            <span class="callback-phone-input-error"></span>
+        </label>
+        <label>
+            <span>Login:</span>
+            <input type="text" class="callback-login-input form-input">
+            <span class="callback-login-input-error"></span>
+        </label>
+        <label>
+            <span>Message:</span>
+            <textarea cols="5" rows="5" class="callback-message-textarea form-textarea"></textarea>
+            <span class="callback-message-textarea-error"></span>
+        </label>
+        <button type="submit" class="callback-submit">Send</button>
+    </form>
+</div>
+
+<script src="form-comment.js"></script>
+<script src="login-form.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

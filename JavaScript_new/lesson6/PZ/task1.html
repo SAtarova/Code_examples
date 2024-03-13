@@ -161,50 +161,72 @@
             objElement.append(objInnerElement);            
         } 
 
+        function RemoveVisibleButtons(current_tag)
+        {
+            let dictDiv = [...current_tag.querySelectorAll("div")];
+
+                for (j = 0; j < dictDiv.length; j++)
+                {
+                    dictDiv[j].style.visibility = "hidden"
+                }
+        }
+
         // Analyze mouse click on existing task
         tasks.onclick = function(event)
         {
             //let objTasks  = document.querySelector("ul");
-            let dictTasks = [...objTasks.querySelectorAll("li")];
+            let dictTasks = [...objTasks.querySelectorAll("li")];            
 
             // Get current event
-            let objTarget = event.target;
+            let objTarget = event.target
 
              // Find li for current task
             for (i = 0; i < dictTasks.length; i++)
             {
+                //let dictDiv  = document.querySelector("li");
+                let dictDiv = [...dictTasks[i].querySelectorAll("div")]
+
                 // Select task
                 if (dictTasks[i] == objTarget)
                 {
-                    dictTasks[i].classList.add("selected")
-
-                    let dictDiv = [...dictTasks[i].querySelectorAll("div")];
-
-                    for (j = 0; j < dictDiv.length; j++){
-                        dictDiv[j].style.visibility = "visible"
-                    }
-
-                }
-
-                // Done/remove selected task 
-                if (dictTasks[i].classList.contains("selected"))
-                {
-                    console.log('Yes')
-
-                    // Through task
-                    if (objTarget.id == "button_done")
-                    {                    
-                        dictTasks[i].classList.add("line_through")
-                    }
-
-                    // Delete task
-                    if (objTarget.id == "button_del")
+                    if (dictTasks[i].classList.contains("selected"))
                     {
-                        dictTasks[i].remove()
-                    } 
+                        dictTasks[i].classList.remove("selected")
+                        RemoveVisibleButtons(dictTasks[i])
+                    }
+                    else
+                    {
+                        dictTasks[i].classList.add("selected")                        
+
+                        for (j = 0; j < dictDiv.length; j++)
+                        {
+                            dictDiv[j].style.visibility = "visible"
+                        }
+                    }
                 }
+                // Done/remove selected task
+                for (j = 0; j < dictDiv.length; j++)
+                {
+                    if (dictDiv[j] == objTarget)
+                    {
+                        if (dictTasks[i].classList.contains("selected"))
+                        {
+                            // Through task
+                            if (objTarget.id == "button_done")
+                            {                    
+                                dictTasks[i].classList.add("line_through")
+                            }
+
+                            // Delete task
+                            if (objTarget.id == "button_del")
+                            {
+                                dictTasks[i].remove()
+                            } 
+                        }
+                    }
+                }
+
             }
-                
         }
 
         remove_all.onclick= function(event)
@@ -251,6 +273,7 @@
             for (i = 0; i < dictTasks.length; i++)
             {
                 dictTasks[i].classList.remove("selected")
+                RemoveVisibleButtons(dictTasks[i])
             }
         }    
     </script>
