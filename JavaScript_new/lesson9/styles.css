@@ -1,0 +1,99 @@
+*, *:after, *:before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.user-section{
+    width: 100%;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title{
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    color: #1b1b1b;
+    margin: 15px 0;
+}
+
+.form-title{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    color: #2d2b2b;
+    margin-bottom: 10px;
+}
+
+.form{
+    width: 100%;
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+
+
+.goods-section{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.goods_title-block{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+.goods-title{
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d1d1d;
+}
+.cart-section{
+    display: flex;
+    gap: 15px;
+}
+
+.goods{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 25px 35px;
+}
+.good{
+    border: 1px solid rgba(0,0,0,.4);
+    border-radius: 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.good-add{
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #11497B;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+}
