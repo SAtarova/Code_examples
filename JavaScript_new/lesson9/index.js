@@ -1,6 +1,7 @@
 const registerForm  = document.querySelector('.form-register');
 const registerLogin = document.querySelector('.login-form');
 const registerTitle = document.querySelector('.log-out');
+const countProducts = document.querySelector('.count');
 
 window.addEventListener('DOMContentLoaded', () => {
     if(localStorage.getItem('userData')){
@@ -56,4 +57,15 @@ registerLogin.addEventListener('submit', (e) => {
 registerTitle.addEventListener('click', (e) => {
     localStorage.removeItem('userData')
 
+})
+
+document.querySelectorAll('.good-add').forEach(goodBtn => {
+
+    goodBtn.addEventListener('click', (e) => {
+        let productCount = e.target.parentElement.children[3];
+        productCount.textContent = Number(productCount.textContent) + 1;
+
+        let carttCount = document.querySelector('.count');
+        carttCount.textContent = Number(carttCount.textContent) + 1;
+    })
 })
