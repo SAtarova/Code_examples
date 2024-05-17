@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!--<link rel="stylesheet" href="css/styles.css">-->
+    <title>Tasks</title>
+</head>
+<body>
+    <main class="main">
+        
+
+    </main>
+    <script>
+        // task1
+        const parentMain = document.querySelector('main')
+        const objButton = `<button type = "button" class="new-btn">Press</button>`;
+        parentMain.insertAdjacentHTML('afterbegin', objButton);
+
+        const newButton = document.querySelector('.new-btn')
+        newButton.addEventListener('click', () => {
+            alert('Button was pressed successfully!')
+        })
+
+        //task2        
+        let newDiv = document.createElement('div')
+        newDiv.classList.add('new-elem')
+        parentMain.appendChild(newDiv)
+
+        let newP = document.createElement('p')
+        newDiv.appendChild(newP)
+
+        const objButton2 = `<button type = "button" class="new-btn2">Clip text</button>`;
+        newDiv.insertAdjacentHTML('beforeend', objButton2);
+        newP.textContent = 'jisajgfo jzisjgvzogjoge qwrlke43ypwtio-p josfp'
+
+        const newButton2 = document.querySelector('.new-btn2')
+        newButton2.addEventListener('click', () => {
+            console.log(newP.textContent)
+            newP.textContent = newP.textContent.slice(0, newP.textContent.length/2) + '...'
+        })
+
+        //task3
+        let newDiv2 = document.createElement('div')
+        newDiv2.classList.add('new-elem2')
+        parentMain.appendChild(newDiv2)
+
+        const objButton3 = `<button type = "button" class="new-btn3">Check field</button>`;
+        newDiv2.insertAdjacentHTML('beforeend', objButton3);
+
+        const objInput = `<input type="text" class="text-form-input" name="title" value = '' placeholder="Input your text">`
+        newDiv2.insertAdjacentHTML('beforeend', objInput);
+
+        const newButton3 = document.querySelector('.new-btn3')
+        const textField  = document.querySelector('.text-form-input')
+        newButton3.addEventListener('click', () => {
+            console.log(textField)
+            console.log(textField.value)
+            if (textField.value == '') {
+                alert('Need to input a text in the text form!')
+            }
+        })
+
+        //task4
+        class objProduct {
+            constructor(productTitle, productSlug, productPrice, productCount) {
+                this.productTitle = productTitle
+                this.productSlug  = Number(productSlug)
+                this.productPrice = Number(productPrice)
+                this.productCount = Number(productCount)
+            }
+        }
+
+        // task5
+        const objButton4 = `<button type = "button" class="new-btn4">Filter count</button>`;
+        parentMain.insertAdjacentHTML('beforeend', objButton4);
+
+        let objProduct1 = new objProduct('apple', 127, 1550, 100)
+        let objProduct2 = new objProduct('plum', 127, 1499, 12)
+        let objProduct3 = new objProduct('pinapple', 127, 2000, 5)
+        let objProduct4 = new objProduct('tomato', 127, 300, 3)
+        let objProduct5 = new objProduct('barry', 127, 1501, 9)
+
+        let arrProducts = [objProduct1, objProduct2, objProduct3, objProduct4, objProduct5]
+
+        class ToConsole {
+            constructor(arrProducts) {
+                this.arrProducts = arrProducts
+            }
+
+            printArr() {
+                const result = this.arrProducts.filter(item => item.productCount > 10)
+                const newButton4 = document.querySelector('.new-btn4')
+
+                newButton4.addEventListener('click', () => {
+                    for (let i = 0; i < result.length; i++) {
+                        console.log(result[i])
+                    }
+                })
+            }
+        }
+
+        let objToConsole = new ToConsole(arrProducts)
+        objToConsole.printArr()
+
+        // task6
+        let objButton5 = `<button type = "button" class="new-btn5">Filter price</button>`;
+        parentMain.insertAdjacentHTML('beforeend', objButton5);
+
+        const result2 = arrProducts.filter(item => item.productPrice > 1500)
+        objButton5 = document.querySelector('.new-btn5')
+
+        objButton5.addEventListener('click', () => {
+            for (let i = 0; i < result2.length; i++) {
+                console.log(result2[i])
+            }
+        })
+
+    </script>
+</body>
+</html>

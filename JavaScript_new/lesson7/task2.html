@@ -3,58 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task6</title>
+    <title>Task2</title>
     <style>
-        .galary
-        {
-            height: 100px;
-            width:  200px;
-            position: relative;
-            overflow: hidden;
+        body {
+          height: 200px;
+          display: flex;
+          justify-content: space-between;
         }
         .pictures
         {
-            height: 100px;
-            width:  200px;
-            display: flex;
-        }
-        img
-        {
-            display: none
+            display: inline-flex;
+            justify-content: center;
         }
         .left, .right
         {
-            position: absolute;
-            top: 40%;
-            width: auto;
-            padding: 20px;
+            height: 57px;
+            width: 5%;
+            padding: 5px;
+            margin-top: 75px;
+            font-weight: bold;
+            font-size: 40px;
+            text-align: center;
+            display: inline-flex;
+            justify-content: center;            
+            cursor: pointer;
+        }
+        .right
+        {
+            right: 0;
         }
     </style>
 </head>    
 <body>
-    <div class = "galery">
-        <div class = "pictures">
-            <img src = "icons\\104650562.png">
-            <img src = "icons\\153050531.png">
-            <img src = "icons\\275385683.png">
-            <img src = "icons\\511745713.png">
-            <img src = "icons\\524082526.png">
-            <img src = "icons\\656413702.png">
-            <img src = "icons\\2059087118.png">
-            <img src = "icons\\2064279029.png">
-            <img src = "icons\\2174669625.png">
-        </div>
-        <div>
-            <button class = "left" type="button" onclick = "AnotherPicture()"></button>
-        </div>
-        <div>
-            <button class = "right" type="button" onclick = "AnotherPicture()"></button>
-        </div>>
-    </div>
+    <button class = "left"><</button>
+
+    <img class = "pictures" src = "icons//104650562.png" alt = "picture">
+  
+    <button class = "right">></button>
+    
     <script>
-        function AnotherPicture()
+        // Make list with source image paths
+        const listImages = ["icons//104650562.png",
+                            "icons//153050531.png", 
+                            "icons//275385683.png",
+                            "icons//511745713.png",
+                            "icons//524082526.png",
+                            "icons//656413702.png",
+                            "icons//2059087118.png",
+                            "icons//2064279029.png",
+                            "icons//2174669625.png"]
+        let nButtonIndex
+
+        // Get tags
+        const objBody      = document.querySelector("body");
+        const dictButtons  = [ ...document.querySelectorAll("button")];
+
+        for (let n = 0; n < dictButtons.length; n++)
         {
-            pass
+            // Button was clicked
+            dictButtons[n].onclick = function(event)
+            {      
+                let nNextIndex
+                // Get current event
+                let objTarget = event.target               
+
+                const sImage = [ ...objBody.querySelectorAll("img")][0]
+
+                // Find current image
+                for (let i = 0; i < listImages.length; i++) 
+                {   
+
+                    nNextIndex = i
+                    // Get source path to the image                
+                    const sFormedObjImagePath  = sImage.src
+                
+                    // Compare image paths
+                    if (sFormedObjImagePath.endsWith(listImages[i]))
+                    {
+                        // Highlight the button in finish of list
+                        if (((i == (listImages.length - 1)) && (dictButtons[n].className == "right")) || 
+                            ((i == 0) && (dictButtons[n].className == "left")))
+                        {
+                            dictButtons[n].style.color  = "LightGrey"
+                            break;
+                        }
+
+                        // Define second button index
+                        if (n == 0)
+                            nButtonIndex = 1
+                        else
+                            nButtonIndex = 0
+
+                         console.log(dictButtons[n].style.color)
+                         console.log(dictButtons[nButtonIndex].style.color)
+                        // Reverse highliting
+                        if (dictButtons[nButtonIndex].style.color == "lightgrey")
+                        {
+                            console.log('H')
+                            delete dictButtons[nButtonIndex].style.color
+                        }                            
+
+                        // Right shift
+                        if ((i < listImages.length) && (dictButtons[n].className == "right"))
+                        {
+                            //listImages[i++]
+                            console.log('RIGHT')
+                            sImage.src = listImages[++nNextIndex]
+                            break;
+                            
+                        }
+                        
+                        // Left shift
+                        if ((i != 0) && (dictButtons[n].className == "left"))
+                        {
+                            console.log('LEFT')
+                            sImage.src = listImages[--nNextIndex]
+                            break;
+                        }                       
+                    }
+                
+                }
+                
+            }
+                
         }
     </script>
 </body>

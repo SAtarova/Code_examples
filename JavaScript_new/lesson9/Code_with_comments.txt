@@ -1,0 +1,128 @@
+//Переменная для обращения к форме регистрации по уникальному классу form-register
+const registerForm = document.querySelector('.form-register');
+
+//Функция изменения тайтла в зависимости от авторизации пользователя
+//Код запустится только в том случае, когда будет загружен контент на странице
+//Т.е. построится DOM дерево
+window.addEventListener('DOMContentLoaded', ()=>{
+    //Если в локалсторадж userData ключ userData выполняем код
+    if(localStorage.getItem('userData')){
+        //поместим данные из локал сторадж в переменную
+        //поскольку это объект, необходимо преобразовать его из строки в объект
+        //при помощи JSON.parse()
+        let registerData = JSON.parse(localStorage.getItem('userData'))
+        //в теге р с классом title передаем надпись Hello и имя пользователя через переменную
+        document.querySelector('.title').textContent = `Hello mr. ${registerData.name}`
+    }else{
+        //Выводим стандратный текст
+        document.querySelector('.title').textContent = `SignIn please`
+    }
+})
+
+
+//На форму регистрации навешиваем событие submit
+registerForm.addEventListener('submit', (e) => {
+    //Удаляем стандартное поведение (перезагрузка страницы)
+    e.preventDefault();
+    //Создаем переменную, которая будет хранить в себе поля формы (данные)
+    const formDataInfo = new FormData(registerForm)
+    //Проводим проверку похожести пароля и повторения пароля
+    //Если пароли разные выводм сообщение
+    if(formDataInfo.get('user-password') !== formDataInfo.get('user-password-next')){
+        //Сообщение если пароли разные
+        alert('Wrong passwords!');
+        //Очистка формы (очистка полей)
+        registerForm.reset();
+    }
+    
+    //Если все хорошо, в localStorage при помощи метода setItem создаем новый экземпляр
+    //Первым аргументом прописываем его название, в данном случае userData
+    //Второй аргумент данные которые хотим поместить, в данном случае это объект 
+    //{
+    //     userName:   formDataInfo.get('user-name'), 
+    //     userPass:   formDataInfo.get('user-password'),
+    //     userSignIn: false
+    // }
+    //поскольку это объект, необходимо преобразовать его в строку, при помощи метода 
+    //JSON.stringify()
+    localStorage.setItem('userData', JSON.stringify({
+        userName:   formDataInfo.get('user-name'), 
+        userPass:   formDataInfo.get('user-password')
+    }
+    ))
+    //Очистка формы (очистка полей)
+    registerForm.reset();
+})
+
+
+/*
+Реализовать функционал формы авторизации
+*/
+
+//Авторизация пользователя 
+//Обращаемся к форме авторизации по уникальному классу формы, в данном случае класс формы login-form
+const loginForm = document.querySelector('.login-form')
+//На форму регистрации навешиваем событие submit
+loginForm.addEventListener('submit', (e) => {
+    //Удаляем стандартное поведение (перезагрузка страницы)
+    e.preventDefault()
+    //Создаем переменную, которая будет хранить в себе поля формы логина(данные)
+    const formDataInfo = new FormData(loginForm)
+    //Создаем переменную, которая будет в себе хранить данные из localStorage
+    //Данные в переменную помещаются за счет применения метода JSON.parse()
+    //поскольку в локал сторадж данные хранятся в виде строки, а нам нужно преобразовать их в объект
+    const userLocal = JSON.parse(localStorage.getItem('userData'))
+    //Проведем проверку корректности логина и пароля
+    if(
+        formDataInfo.get('login-name') !== userLocal.userName 
+        || formDataInfo.get('login-password') !== userLocal.userPass
+    ){
+        alert('Error login or password');
+        //Очищаем поля формы
+        formDataInfo.reset();
+    }else{
+        //Выводим приветственное сообщение
+        alert(`Hello mr. ${formDataInfo.get('login-name')}`)
+        //Прописываем новый тайтл с именем
+        document.querySelector('.title').textContent = `Hello mr. ${formDataInfo.get('login-name')}`;
+        //Очищаем поля формы
+        e.target.reset()
+    }
+
+})
+
+//Кнопка выхода
+document.querySelector('.log-out').addEventListener('click', () => {
+    localStorage.removeItem('userData');
+    //Выводим стандратный текст
+    document.querySelector('.title').textContent = `SignIn please`;
+})
+
+
+//Обращаемся к кнопкам через класс good-add
+//Т.к. кнопок у нас несколько на странице с таким классом, используем querySelectorAll
+//Данный метод вернет нам массив элементов, для их перебора используем forEach
+//Именуем каждый элемент как goodBtn
+document.querySelectorAll('.good-add').forEach(goodBtn => {
+    //Навешиваем обработчик события click на каждую кнопку из найденных
+    goodBtn.addEventListener('click', (e) => {
+        //Помещаем нужный соседний спан конкретной кнопки в переменную
+        //Для этого, определяем e.target (он покажет нам конкретную кнопку, которая была нажата)
+        //После того как мы определили конкретную кнопку, находим родительский элемент, при помощи parentElement
+        //Далее у родителя получаем все дочерние элементы при помощи children (получим массив)
+        //И так как спан у нас по индексу в массиве 3, выбираем его
+        let productCount = e.target.parentElement.children[3];
+        //Далее обращаемся к textContent, поскольку textContent - строка
+        //Необходимо явно или неявно привести его к числовому значению
+        //Если этого не сделать, то элементы не будут складываться как мы ожидаем, а буду "приклеиваться"
+        //т.е. вместо ожидаемых 2 или 3, будем получать 11 или 111
+        productCount.textContent = Number(productCount.textContent) + 1;
+        //Обращаемся к спану нашей корзины, по уникальному классу count
+        let shippingCartCount = document.querySelector('.count');
+        //Далее обращаемся к textContent, поскольку textContent - строка
+        //Необходимо явно или неявно привести его к числовому значению
+        //Если этого не сделать, то элементы не будут складываться как мы ожидаем, а буду "приклеиваться"
+        //т.е. вместо ожидаемых 2 или 3, будем получать 11 или 111
+        shippingCartCount.textContent = Number(shippingCartCount.textContent) + 1;
+    })
+})

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>DOM remember</title>
+</head>
+<body>
+
+    <a class="download-link" href="dom-start-remember-class.rar" download> Скачать исходники:
+        <img class="download-img" src="./img/cloud-download.svg" alt="">
+    </a>
+
+    <main class="main">
+        <div class="container">
+            <section class="task">
+                <div class="task-info">
+                    <h2 class="task-title">Open Comment</h2>
+                    <p class="task-description">Создать схожую верстку. Реализовать следующее: если длина комментария больше 150 символов, необходимо обрезать его, и сделать комментарий кликабельным, по нажатию на комментарий, открывается модальное окно, в котором отображается полный текст комментария. При повторном нажатии на окно, комментарий закрывается. Класс для "открытия" модального окна "displayShow"</p>
+                </div>
+                <div class="review-modal">
+                    <div class="review-modal__container"></div>
+                </div>
+                <ul class="reviews">
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">11.02.2024</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam lLorem ipsum dolor sit amet, consectetur adipisicing elit. Aut impedit modi obcaecati tenetur voluptas! Consequuntur, ea, earum? Alias corporis delectus dolor eius enim maiores modi placeat, quis ratione rerum sed sequi sit temporibus! At deleniti dolorum earum, eius iusto nisi obcaecati possimus sequi tenetur voluptas voluptate voluptatem. Aliquid dicta earum hic laudantium maiores nostrum quidem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid commodi consequatur corporis cumque ea eaque, eveniet ex ipsam molestiae nesciunt nulla odio odit pariatur ratione sint totam veritatis! Alias aspernatur atque autem cum, est ipsum magnam maiores mollitia provident soluta! Aut deserunt, dolorem doloremque ipsam iste minima nihil nostrum officiis quaerat quod, tempore temporibus!</p>
+                        <div class="review__info-date">189.03.2024</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">12.03.2024</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">22.05.2020</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">08.06.2021</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">01.01.2019</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">21.09.2014</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">11.07.2023</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">22.02.2022</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">11.08.2020</div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

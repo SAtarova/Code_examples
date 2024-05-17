@@ -1,0 +1,114 @@
+.accordions{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+.accordion{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.accordion__question-block{
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    background-color: #f5f5f5;
+    border-radius: 24px;
+    padding: 20px 30px;
+
+    cursor: pointer;
+}
+.accordion__question{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #0c0c0c;
+
+    width: 95%;
+    height: auto;
+    user-select: none;
+    transition: all .4s ease-in-out;
+}
+.accordion__answer{
+    width: 100%;
+    height: 0;
+
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #0c0c0c;
+
+    background-color: #f5f5f5;
+    border-radius: 24px;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s ease-in-out;
+}
+/*
+СТИЛИ СТРЕЛОЧКИ
+*/
+.accordion__question-block:after{
+    content: '\276F';
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 2%;
+
+    width: 25px;
+    height: 25px;
+
+    background-color: #EF5A1B;
+    border-radius: 8px;
+    margin: auto;
+    transition: all .4s ease-in-out;
+
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.accordion__question-block_active:after{
+    transform: rotate(90deg);
+}
+
+/*
+СТИЛИ ДЛЯ "ОТКРЫТОГО" / "АКТИВНОГО" ВОПРОСА
+*/
+.accordion__question-block_active{
+    border-radius: 24px 24px 0 0;
+}
+.accordion__answer_active{
+    height: auto;
+    padding: 20px 30px;
+    visibility: visible;
+    opacity: 1;
+    border-radius: 0 0 24px 24px;
+}
+
+.animationLeftBlock{ opacity: 0;  &.animationLeft{ opacity: 1; }  }
+.animationLeft{ animation: 1s leftPosition ease-in-out; }
+@keyframes leftPosition {
+    0%{transform: translateX(-150%); opacity: 0; display: none; visibility: hidden;}
+    100%{transform: translateX(0); opacity: 1; display: flex; visibility: visible;}
+}
+
+.animationRightBlock{ opacity: 0;  &.animationRight{ opacity: 1; }  }
+.animationRight{ animation: 1s rightPosition ease-in-out; }
+@keyframes rightPosition {
+    0%{transform: translateX(150%); opacity: 0; display: none; visibility: hidden;}
+    100%{transform: translateX(0); opacity: 1; display: flex; visibility: visible;}
+}

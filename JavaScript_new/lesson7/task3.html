@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div
+        {
+            border-color: MidnightBlue;
+            background-color: LightSkyBlue;            
+            
+        }
+        h2
+        {
+            height: 30px;
+            color: white;
+            background-color: DarkBlue;
+            cursor: pointer;
+        }
+        p
+        {
+            padding: 0.5% 0.5% 0.5% 1%;
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id = "Texts">
+        <div>
+            <h2>What is Lorem Impsum?</h2>
+            <p>bvjervbke ,mdff,l;b; nnfjfkr nvnvjkfm nffjjfkrf dkkgktmd mvmkkkrjhenfm mvmrmgrljkrnv fekgnerkvm
+            kpwegkprhk[ mepgkp] kprkpkpWEF WEGJPKKPKpkprgk;tmn;m;arh;n rgngnjihgdajgirglssg fbkaehrgjkhalkhrghkl nerghseirhg</p>
+        </div>
+        <div>
+            <h2>Why do we use it?</h2>
+            <p>bvjervbke ,mdff,l;b; nnfjfkr nvnvjkfm nffjjfkrf dkkgktmd mvmkkkrjhenfm mvmrmgrljkrnv fekgnerkvm;</p>            
+        </div>
+        <div>
+            <h2>Where does it come from?</h2>
+            <p>bvjervbke ,mdff,l;b; nnfjfkr nvnvjkfm nffjjfkrf dkkgktmd mvmkkkrjhenfm mvmrmgrljkrnv fekgnerkvm;</p>
+        </div>
+        <div>
+            <h2>Where can I get some?</h2>
+            <p>bvjervbke ,mdff,l;b; nnfjfkr nvnvjkfm nffjjfkrf dkkgktmd mvmkkkrjhenfm mvmrmgrljkrnv fekgnerkvm;</p>
+        </div>
+    </div>
+    <script>
+
+        // Analyze a click to open text
+        Texts.onclick = function(event)
+        {
+            const dictHeaders = document.querySelectorAll('h2')
+            const dictTexts   = document.querySelectorAll('p')
+
+            // Get current event
+            const objTarget = event.target
+
+            // Check all headers
+            for (i = 0; i < dictHeaders.length; i++)
+            {    
+                const objParents = dictHeaders[i].parentNode
+                const dictText = [...objParents.querySelectorAll('p')]
+
+                if (dictHeaders[i] == objTarget)
+                {
+
+                    // Change display property
+                    if (dictText[0].style.display == 'none' || dictText[0].style.display == '')
+                    {
+                        // Clear all displayses
+                        for (sText of dictTexts)
+                        {
+                            sText.style.display = 'none'
+                        }
+
+                        // Open p tag
+                        dictText[0].style.display = 'block';  
+                    } 
+                    else 
+                    {
+                        // Clear opened p tag
+                        dictText[0].style.display = 'none';
+                    } 
+                }
+             
+            }
+        }
+    </script>
+</body>
+</html>

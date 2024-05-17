@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>DOM remember</title>
+</head>
+<body>
+
+    <a class="download-link" href="dom-start-remember-class.rar" download> Скачать исходники:
+        <img class="download-img" src="./img/cloud-download.svg" alt="">
+    </a>
+
+    <main class="main">
+        <div class="container">
+            <section class="task">
+                <div class="task-info">
+                    <h2 class="task-title">Counter Task</h2>
+                    <p class="task-description">Создать схожую верстку: две кнопки и текстовое поле с отображением начального числа счетчика. Реализовать следующий функционал: при нажатии на кнопку "+" увеличивать счетчик на 1, когда счетчик станет равен 10, кнопка должна стать не активной (по нажатию, счетчик больше не увеличивается) и появиться сообщение (alert), что достигнут максимум счетчика, при нажатии на кнопку "-" уменьшать счетчик на 1, если счетчик станет равен 0, вывести сообщение (alert) что достигнут минимум счетчика.</p>
+                </div>
+
+                <div class="task-block">
+                    <div class="counter">
+                        <button class="decrease-btn counter-btn">-</button>
+                        <input type="text" class="increase-decrease" value="0">
+                        <button class="increase-btn counter-btn">+</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="task">
+                <div class="task-info">
+                    <h2 class="task-title">Comment Form Task</h2>
+                    <p class="task-description">Создать схожую верстку: четыре текстовых поля и кнопка отправки комментария. Создать пустой массив, для хранения созданных комментариев. Реализовать следующий функционал: при нажатии на кнопку, проверить чтобы все четыре поля не были пустыми, если они не пустые, сформировать объект со следующими пятью свойствами: id, title, body, rating, author. Свойству id присваивать число, равное длине массива плюс один. После создания объекта, поместить его в конец созданного вами массива с комментариями и очистить все поля. Массив с комментариями вывести при помощи console</p>
+                </div>
+
+                <div class="task-block">
+                    <div class="form-comment">
+                        <input type="text" class="form-comment-input" name="title" placeholder="Введите заголовок комментария">
+                        <input type="text" class="form-comment-input" name="body" placeholder="Введите ваше сообщение">
+                        <input type="text" class="form-comment-input" name="rating" placeholder="Введите рейтинг доверия">
+                        <input type="text" class="form-comment-input" name="author" placeholder="Введите ваше имя">
+                        <button class="form-comment-button">Send Comment</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="task">
+                <div class="task-info">
+                    <h2 class="task-title">Comment Section Task</h2>
+                    <p class="task-description">Создать схожую верстку: карточки с комментариями, а также форму для вывода комментариев, которая содержит: четыре поля и кнопку. Новые комментарии добавляются в конце уже созданных комментариев. Форма создания комментариев дублирует функционал предыдущего задания, с добавлением следующего, нового функционала: если строка с сообщением (свойство body) больше 55 символов, обрезать ее и вставить в конце три точки; провести проверку поля автора, если комментарий с таким же автором уже был написан, изменить рейтинг доверия на "5".</p>
+                </div>
+
+                <div class="comments">
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task-block">
+                    <div class="comment-form">
+                        <input type="text" class="comment-form-input" name="title" placeholder="Введите заголовок комментария">
+                        <input type="text" class="comment-form-input" name="body" placeholder="Введите ваше сообщение">
+                        <input type="text" class="comment-form-input" name="rating" placeholder="Введите рейтинг доверия">
+                        <input type="text" class="comment-form-input" name="author" placeholder="Введите ваше имя">
+                        <button class="comment-form-button">Send Comment</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="task">
+                <div class="task-info">
+                    <h2 class="task-title">News Task</h2>
+                    <p class="task-description">Создать схожую верстку: Кнопка с отображением постов, кнопка с сортировкой по названию, select с выбором имени автора, кнопка удалить все. Скачать предоставленный файл с массивом новостей, вывести новости на экран и реализовать следующий функционал: сортировку новостей по названию, фильтр новостей по имени автора, удаление всех новостей по нажатию на кнопку. <a class="download" href="news-array.txt" download>Скачать файл</a></p>
+                </div>
+
+                <div class="news-action">
+                    <button class="get-posts new-btn">Получить посты</button>
+                    <button class="sort-title new-btn">Сортировка по названию</button>
+                    <select name="name" class="select-name">
+                        <option value="Anna">Anna</option>
+                        <option value="Alex">Alex</option>
+                        <option value="Nina">Nina</option>
+                    </select>
+                    <button class="delete-all new-btn">Удалить все</button>
+                </div>
+                <div class="news">
+                </div>
+            </section>
+
+            <section class="task">
+                <div class="task-info">
+                    <h2 class="task-title">Accordions Task</h2>
+                    <p class="task-description">Создать схожую верстку: Четыре аккордеона (общий блок, внутри него: блок с вопросом и блок с ответом). Реализовать следующий функционал: изначально все вопросы открыты. В начальном положении вопросы должны быть "закрыты", стрелочка направлена вправо, по нажатию на вопрос или стрелочку вопрос открывается (ответ появляется снизу), стрелочка направлена вниз. *Класс поворота стрелочки необходимо написать самостоятельно. Стили для аккордеона можно скачать <a class="download" href="">по этой ссылке</a> или найти в исходниках в папке "css -> components -> accordion".</p>
+                </div>
+
+                <ul class="accordions">
+                    <li class="accordion">
+                        <div class="accordion__question-block">
+                            <p class="accordion__question">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, repellat!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, repellat!</p>
+                        </div>
+                        <p class="accordion__answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium blanditiis cum debitis esse ex illo iure neque optio quas! Aliquam asperiores, eaque et in ipsam iure labore mollitia, officia provident quaerat quas repudiandae sapiente suscipit? Ab illo incidunt, laborum magnam minima nobis suscipit ullam.</p>
+                    </li>
+                    <li class="accordion">
+                        <div class="accordion__question-block ">
+                            <p class="accordion__question">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, repellat!</p>
+                        </div>
+                        <p class="accordion__answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium blanditiis cum debitis esse ex illo iure neque optio quas! Aliquam asperiores, eaque et in ipsam iure labore mollitia, officia provident quaerat quas repudiandae sapiente suscipit? Ab illo incidunt, laborum magnam minima nobis suscipit ullam.</p>
+                    </li>
+                    <li class="accordion">
+                        <div class="accordion__question-block">
+                            <p class="accordion__question">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, repellat!</p>
+                        </div>
+                        <p class="accordion__answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium blanditiis cum debitis esse ex illo iure neque optio quas! Aliquam asperiores, eaque et in ipsam iure labore mollitia, officia provident quaerat quas repudiandae sapiente suscipit? Ab illo incidunt, laborum magnam minima nobis suscipit ullam.</p>
+                    </li>
+                    <li class="accordion">
+                        <div class="accordion__question-block">
+                            <p class="accordion__question">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, repellat!</p>
+                        </div>
+                        <p class="accordion__answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium blanditiis cum debitis esse ex illo iure neque optio quas! Aliquam asperiores, eaque et in ipsam iure labore mollitia, officia provident quaerat quas repudiandae sapiente suscipit? Ab illo incidunt, laborum magnam minima nobis suscipit ullam.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="task">
+                <div class="task-info">
+                    <h2 class="task-title">todo list</h2>
+                    <p class="task-description">Создать схожую верстку. У вас есть кнопка создания новой заметки и кнопка "удалить все". По нажатию на кнопку "удалить все" - удаляются все элементы списка. Рядом с каждой заметкой есть три кнопки: удалить, редактировать, готово. Кнопка "удалить" - удаление текущей заметки; Кнопка "редактировать" - редактирование текущей заметки, повторное нажатие сохраняет изменения; Кнопка "готово" - зачеркивает текущую заметку и делает остальные кнопки данной заметки неактивными, повторное нажатие возвращает поле в исходное состояние</p>
+                </div>
+                
+                <div class="todo">
+                    <div class="todo-panel">
+                        <svg class="todo-icon add-new-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="8.4" stroke="#EF5A1B" stroke-opacity="0.25" stroke-width="1.2"/>
+                            <path d="M12 8L12 16" stroke="#EF5A1B" stroke-width="1.2" stroke-linecap="round"/>
+                            <path d="M16 12L8 12" stroke="#EF5A1B" stroke-width="1.2" stroke-linecap="round"/>
+                        </svg>
+
+                        <svg class="todo-icon remove-all-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 7.5C4 7.2643 4 7.14645 4.07322 7.07322C4.14645 7 4.2643 7 4.5 7H19.5C19.7357 7 19.8536 7 19.9268 7.07322C20 7.14645 20 7.2643 20 7.5V7.75155C20 7.84249 20 7.88797 19.986 7.92806C19.974 7.96233 19.9547 7.99358 19.9294 8.01963C19.8998 8.0501 19.8591 8.07044 19.7778 8.11111C19.127 8.43649 18.8017 8.59917 18.565 8.84298C18.3626 9.0514 18.2082 9.30138 18.1122 9.57554C18 9.89627 18 10.2601 18 10.9876V16C18 17.8856 18 18.8284 17.4142 19.4142C16.8284 20 15.8856 20 14 20H10C8.11438 20 7.17157 20 6.58579 19.4142C6 18.8284 6 17.8856 6 16V10.9876C6 10.2601 6 9.89627 5.88778 9.57554C5.79185 9.30138 5.63735 9.0514 5.43503 8.84298C5.19835 8.59917 4.87297 8.43649 4.22222 8.11111C4.14088 8.07044 4.10021 8.0501 4.07062 8.01963C4.04533 7.99358 4.02602 7.96233 4.01403 7.92806C4 7.88797 4 7.84249 4 7.75155V7.5Z" fill="#EF5A1B" fill-opacity="0.25"/>
+                            <path d="M10.0681 4.37059C10.1821 4.26427 10.4332 4.17033 10.7825 4.10332C11.1318 4.03632 11.5597 4 12 4C12.4403 4 12.8682 4.03632 13.2175 4.10332C13.5668 4.17033 13.8179 4.26427 13.9319 4.37059" stroke="#EF5A1B" stroke-linecap="round"/>
+                            <rect x="14" y="11" width="1" height="6" rx="0.5" fill="#EF5A1B"/>
+                            <rect x="9" y="11" width="1" height="6" rx="0.5" fill="#EF5A1B"/>
+                        </svg>
+                    </div>
+                    <ul class="todo-list">
+                        <li class="todo-list__item">
+                            <input type="text" class="todo-list__item-text" readonly="readonly">
+                            <div class="todo-list__item-actions">
+                                <img class="todo-list__item-actions-icon check-list-icon" src="./img/icons/check-icon.svg" alt="">
+                                <img class="todo-list__item-actions-icon edit-list-icon" src="./img/icons/edit-icon.svg" alt="">
+                                <img class="todo-list__item-actions-icon delete-list-icon" src="./img/icons/delete-icon.svg" alt="">
+                            </div>
+                        </li>
+                        <li class="todo-list__item">
+                            <input type="text" class="todo-list__item-text" readonly="readonly">
+                            <div class="todo-list__item-actions">
+                                <img class="todo-list__item-actions-icon check-list-icon" src="./img/icons/check-icon.svg" alt="">
+                                <img class="todo-list__item-actions-icon edit-list-icon" src="./img/icons/edit-icon.svg" alt="">
+                                <img class="todo-list__item-actions-icon delete-list-icon" src="./img/icons/delete-icon.svg" alt="">
+                            </div>
+                        </li>
+                        <li class="todo-list__item">
+                            <input type="text" class="todo-list__item-text" readonly="readonly">
+                            <div class="todo-list__item-actions">
+                                <img class="todo-list__item-actions-icon check-list-icon" src="./img/icons/check-icon.svg" alt="">
+                                <img class="todo-list__item-actions-icon edit-list-icon" src="./img/icons/edit-icon.svg" alt="">
+                                <img class="todo-list__item-actions-icon delete-list-icon" src="./img/icons/delete-icon.svg" alt="">
+                            </div>
+                        </li>
+                        <li class="todo-list__item">
+                            <input type="text" class="todo-list__item-text" readonly="readonly">
+                            <div class="todo-list__item-actions">
+                                <img class="todo-list__item-actions-icon check-list-icon" src="./img/icons/check-icon.svg" alt="">
+                                <img class="todo-list__item-actions-icon edit-list-icon" src="./img/icons/edit-icon.svg" alt="">
+                                <img class="todo-list__item-actions-icon delete-list-icon" src="./img/icons/delete-icon.svg" alt="">
+                            </div>
+                        </li>
+                        <li class="todo-list__item">
+                            <input type="text" class="todo-list__item-text" readonly="readonly">
+                            <div class="todo-list__item-actions">
+                                <img class="todo-list__item-actions-icon check-list-icon" src="./img/icons/check-icon.svg" alt="">
+                                <img class="todo-list__item-actions-icon edit-list-icon" src="./img/icons/edit-icon.svg" alt="">
+                                <img class="todo-list__item-actions-icon delete-list-icon" src="./img/icons/delete-icon.svg" alt="">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="task">
+                <div class="task-info">
+                    <h2 class="task-title">Open Comment</h2>
+                    <p class="task-description">Создать схожую верстку. Реализовать следующее: если длина комментария больше 150 символов, необходимо обрезать его, и сделать комментарий кликабельным, по нажатию на комментарий, открывается модальное окно, в котором отображается полный текст комментария. При повторном нажатии на окно, комментарий закрывается. Класс для "открытия" модального окна "displayShow"</p>
+                </div>
+                <div class="review-modal">
+                    <div class="review-modal__container"></div>
+                </div>
+                <ul class="reviews">
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">11.02.2024</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam lLorem ipsum dolor sit amet, consectetur adipisicing elit. Aut impedit modi obcaecati tenetur voluptas! Consequuntur, ea, earum? Alias corporis delectus dolor eius enim maiores modi placeat, quis ratione rerum sed sequi sit temporibus! At deleniti dolorum earum, eius iusto nisi obcaecati possimus sequi tenetur voluptas voluptate voluptatem. Aliquid dicta earum hic laudantium maiores nostrum quidem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid commodi consequatur corporis cumque ea eaque, eveniet ex ipsam molestiae nesciunt nulla odio odit pariatur ratione sint totam veritatis! Alias aspernatur atque autem cum, est ipsum magnam maiores mollitia provident soluta! Aut deserunt, dolorem doloremque ipsam iste minima nihil nostrum officiis quaerat quod, tempore temporibus!</p>
+                        <div class="review__info-date">189.03.2024</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">12.03.2024</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">22.05.2020</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">08.06.2021</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">01.01.2019</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">21.09.2014</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">11.07.2023</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">22.02.2022</div>
+                    </li>
+                    <li class="review">
+                        <div class="review__info-author-rating">
+                            <p class="review__info-author">Alex</p>
+                            <div class="review__info-rating">
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9733;</button>
+                                <button class="star">&#9734;</button>
+                                <button class="star">&#9734;</button>
+                            </div>
+                        </div>
+                        <p class="review__info-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque dolore doloremque facere laudantium, minus nemo quaerat quibusdam</p>
+                        <div class="review__info-date">11.08.2020</div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

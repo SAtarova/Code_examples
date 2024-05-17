@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+    <style>
+    </style>
+</head>    
+<body>
+    <script>
+        let nNumber = 120
+
+        do
+        {
+            nNumber = +prompt('Enter a number greater than 100:')
+            console.log(nNumber)
+            if (nNumber <= 100)
+            {
+                alert('Your entered number is less. Please, enter a new number.')
+            }
+            else
+            {
+               alert('Your entered number is ' + nNumber)
+               break
+            }
+            console.log(nNumber)
+            console.log(nNumber != null || nNumber != 0)
+
+        } while(nNumber != null && nNumber != 0)
+    </script>
+</body>
+</html>

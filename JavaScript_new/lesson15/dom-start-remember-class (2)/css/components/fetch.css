@@ -1,0 +1,23 @@
+.fetch{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px 30px;
+    position: relative;
+}
+.fetch__users {
+    grid-column: 2;
+    display: flex;
+    flex-flow: row wrap;
+    //justify-content: space-around;
+}
+
+.fetch__users-single {
+    width: 47%;
+    border: 1px solid #EF5A1B;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 5px;
+}
+

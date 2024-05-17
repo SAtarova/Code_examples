@@ -1,0 +1,155 @@
+.fetch{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px 30px;
+    position: relative;
+}
+
+.fetch__posts {
+    grid-column: 2;
+    display: flex;
+    flex-flow: row wrap;
+    //justify-content: space-around;
+}
+
+.fetch__users-single {
+    width: 110%;
+    border: 1px solid #EF5A1B;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 5px;
+}
+
+.fetch__form{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    grid-template-rows: 60px 60px;
+    grid-gap: 25px 30px;
+}
+.fetch__form-input{
+    width: 100%;
+    height: auto;
+    padding: 12px 5px 0 12px;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    border-bottom: 1px solid #EF5A1B;
+}
+.fetch__form-input_active{
+    border-bottom: 1px solid #11497B;
+}
+.all-posts,
+.fetch__form-button{
+    width: 100%;
+    height: auto;
+    border: 1px solid #EF5A1B;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 15px 25px;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #0c0c0c;
+}
+.all-posts{
+    position: absolute;
+    top: -35px;
+    right: 0;
+    max-width: 235px;
+}
+
+.fetch__posts{
+    width: 100%;
+    height: auto;
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    grid-gap: 25px 35px;
+}
+
+.fetch__posts-single{
+    border: 1px solid #EF5A1B;
+    border-radius: 10px;
+    padding: 10px;
+    list-style: none;
+}
+.fetch__posts-single::marker{display: none}
+
+.post-modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 35;
+    display: none;
+}
+.post-modal__container {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    max-height: 550px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+.post-modal__container::-webkit-scrollbar {
+    margin: 10px 5px;
+    width: 5px; /* ширина всей полосы прокрутки */
+}
+.post-modal__container::-webkit-scrollbar-track {
+    margin: 10px 5px;
+    background: transparent; /* цвет зоны отслеживания */
+}
+.post-modal__container::-webkit-scrollbar-thumb {
+    margin: 10px 5px;
+    background-color: rgba(0, 0, 0, 0.2); /* цвет бегунка */
+    border-radius: 30px; /* округлось бегунка */
+    border: none; /* отступ вокруг бегунка */
+}
+.fetch__posts-single-actions{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.btn{
+    padding: 8px 12px;
+    background-color: white;
+    color: #EF5A1B;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+    border-radius: 10px;
+}
+.change{
+    border: 1px solid #11497B;
+    background-color: #11497B;
+    color: white;
+}
+.change_active{
+    border: 1px solid #11497B;
+    background-color: white;
+    color: #11497B;
+}
+.delete{
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+}

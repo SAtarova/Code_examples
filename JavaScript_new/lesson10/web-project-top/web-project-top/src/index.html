@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/top.css">
+    <title>Home | ScopusPublish</title>
+</head>
+<body>
+
+<header class="header hp-header">
+    <div class="top__section">
+        <div class="top__wrapper container">
+            <p class="top__tagline">Publish in Scopus with us quickly and easily!</p>
+            <ul class="top__social-list">
+                <li class="top__social-list-item">
+                    <a class="top__social-list-link" href="">
+                        <img class="top__social-image" src="./images/icons/mail-icon.svg" alt="EMail icon">
+                        <span class="top__social-span">support@scopuspub.com</span>
+                    </a>
+                </li>
+                <li class="top__social-list-item">
+                    <a class="top__social-list-link" href="">
+                        <img class="top__social-image" src="./images/icons/telegram-icon.svg" alt="EMail icon">
+                    </a>
+                </li>
+                <li class="top__social-list-item">
+                    <a class="top__social-list-link" href="">
+                        <img class="top__social-image" src="./images/icons/vk-icon.svg" alt="EMail icon">
+                    </a>
+                </li>
+                <li class="top__social-list-item">
+                    <a class="top__social-list-link" href="">
+                        <img class="top__social-image" src="./images/icons/whatsapp-icon.svg" alt="EMail icon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main__section hp-main__section container">
+        <a href="/" class="logo-link"> <img class="logo-img" src="images/scopus-publish-new-white.svg" alt=""> </a>
+
+        <nav class="main-menu__navbar">
+            <ul class="main-menu__list">
+                <li class="main-menu__list-item"> <a href="/" class="main-menu__list-link hp-main-menu__list-link">Home</a> </li>
+                <li class="main-menu__list-item"> <a href="/about.html" class="main-menu__list-link hp-main-menu__list-link">About us</a> </li>
+                <li class="main-menu__list-item"> <a href="/price.html" class="main-menu__list-link hp-main-menu__list-link">Price</a> </li>
+                <li class="main-menu__list-item"> <a href="/blog.html" class="main-menu__list-link hp-main-menu__list-link">Blog</a> </li>
+                <li class="main-menu__list-item"> <a href="/faq.html" class="main-menu__list-link hp-main-menu__list-link">FAQ</a> </li>
+                <li class="main-menu__list-item"> <a href="/contact.html" class="main-menu__list-link hp-main-menu__list-link">Contact</a> </li>
+            </ul>
+        </nav>
+
+        <div class="main-actions">
+            <div class="select-dropdown">
+                <button class="select-dropdown__button select-dropdown__button_hp-top">English</button>
+                <ul class="select-dropdown__list select-dropdown__list_hp-top select-dropdown_hidden">
+                    <li class="select-dropdown__list-item select-dropdown__list-item_hp-top" data-value="lang">English</li>
+                    <li class="select-dropdown__list-item select-dropdown__list-item_hp-top" data-value="lang">Russian</li>
+                    <li class="select-dropdown__list-item select-dropdown__list-item_hp-top" data-value="lang">Spanish</li>
+                </ul>
+                <input class="select-dropdown_hidden" type="text" name="select-language" value="">
+            </div>
+
+            <button class="modal__btn-header modal__btn_red call-modal">
+                <span class="button-span">submit application</span>
+            </button>
+        </div>
+
+        <div class="mobile-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+<div class="modal modal__none call-modal">
+    <div class="modal__wrapper">
+        <div class="modal__close"></div>
+        <p class="modal__title">Send us message and we call back</p>
+        <form action="" class="modal__form">
+            <div class="modal__form-field-block">
+                <input class="modal__form-field-block-input" type="text" name="user-name" placeholder="Please enter your name">
+                <label class="modal__form-field-block-span">Name:</label>
+            </div>
+            <div class="modal__form-field-block">
+                <input class="modal__form-field-block-input" type="tel" maxlength="15" name="user-phone" placeholder="Please enter your phone">
+                <label class="modal__form-field-block-span">Phone:</label>
+            </div>
+            <div class="modal__form-field-block">
+                <input class="modal__form-field-block-input" type="email" name="user-phone" placeholder="Please enter your email">
+                <label class="modal__form-field-block-span">Email:</label>
+            </div>
+            <div class="modal__form-field-block">
+                <textarea class="modal__form-field-block-textarea"  name="user-phone" placeholder="Please enter your message" rows = '1' cols="24"></textarea>
+                <span class="modal__form-field-block-span">Enter your text:</span>
+            </div>
+            <div class="modal__form-field-block modal__form-privacy  modal__form-field-block_last">
+                <div class="modal__form-privacy-block">
+                    <input class="modal__form-privacy-block-radio" type="checkbox" name="privacy-radio"/>
+                    <p class="modal__form-privacy-block-text">
+                        Я подтверждаю свое согласие с условиями <a href="#" class="modal-form__privacy-link">Политики в отношении персональных данных</a> и даю
+                        <a href="#" class="modal-form__privacy-link">согласие на обработку персональных данных</a>
+                    </p>
+                </div>
+                <div class="modal__form-privacy-block-send">
+                    <button type="submit" class="modal__form-privacy-block-btn">Send message</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mm-header">
+    <div class="mm-header__wrapper">
+        <div class="mm-header__close-block"> <img class="mm-header__close-img" src="./images/icons/close-blue-icon.svg"> </div>
+        <div class="mm-header__callback">
+            <p class="main-mobile__slogan displayNone"> If you have any questions, leave your email or phone number, we will contact you </p>
+        </div>
+    </div>
+</div>
+
+<main>
+
+    <section class="hp-banner scp-section">
+        <img class="hp-banner__main-image"   src="./images/header-main-image.jpg"      alt="The work of our employees to improve the quality of work">
+        <img class="hp-banner__first-image"  src="./images/header-home/white-line.png" alt="First image decoration">
+        <img class="hp-banner__second-image" src="./images/header-home/blue-line.png"  alt="Second image decoration">
+
+        <div class="hp-banner__wrapper container">
+            <h1 class="hp-banner__title">Assistance in publishing articles in journals from the Scopus and Web of Science databases</h1>
+            <p class="hp-banner__text">Achievement in science: publication of an article in Scopus with us!</p>
+            <button class="modal__btn_blue call-modal"><span class="button-span">submit application</span></button>
+        </div>
+    </section>
+
+    <section class="hp-team scp__section-bgImage">
+        <img src="./images/bg-section.png" alt="" class="scp__section-image-bg">
+        <div class="hp-team__wrapper container">
+            <h2 class="scp__section-title-h2">Our Team</h2>
+            <div class="hp-team__main">
+                <p class="scp__section-text">Scientific Publications is an established brand that the scientific community perceives it as a company that guarantees results. This is precisely the ideology of the company when interaction with clients became the reason for the creation of our slogan “Result, not process”.</p>
+                <p class="scp__section-text">The values of Scientific Publications are in the area of honesty and respect for to every client. We are responsible for all projects of scientists who contact us for publication assistance, we guarantee timely implementation of the terms of the Agreement and maximum transparent actions in the process of its implementation.</p>
+                <p class="scp__section-text">The company successfully cooperates with researchers from all over the world, scientific institutions, educational institutions, state and public organizations, as evidenced by the signed  documents and memoranda.</p>
+                <ul class="hp-team__cards">
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="hp-advantages scp-section">
+        <div class="hp-advantages__wrapper container">
+            <h2 class="scp__section-title-h2  ">Advantages</h2>
+            <ul class="hp-advantages__list">               
+            </ul>
+        </div>
+    </section>
+
+    <section class="hp-faq scp__section-bgImage">
+        <img src="./images/bg-section.png" alt="" class="scp__section-image-bg">
+        <div class="container">
+            <div class="hp-faq__wrapper scp__section-bgImage-wrapper">
+                <h2 class="scp__section-title-h2  ">Frequently asked question</h2>
+                <ul class="accordion-section">                    
+                </ul>
+            </div>
+            <div class="hp-faq__link-section">
+                <a class="hp-faq__faq-page-link" href="/faq.html">More questions</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="hp-call-section scp-section">
+        <div class="container">
+            <div class="hp-call-section__wrapper scp-section__wrapper  ">
+                <div class="hp-call__title">Get a free consultation</div>
+                <form action="" class="call-form">
+                    <input type="text" class="call-form__input" name="user-name" placeholder="Your Name">
+                    <input type="text" class="call-form__input" name="user-email" placeholder="Your Email">
+                    <input type="tel" class="call-form__input" name="user-phone" placeholder="Enter whatsapp phone">
+                    <button type="submit" class="call-form__button">Get a consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="hp-publish scp__section-bgImage">
+        <img src="./images/bg-section.png" alt="" class="scp__section-image-bg">
+        <div class="hp-publish__wrapper container">
+            <h2 class="scp__section-title-h2  ">How to publish an article</h2>
+            <p class="scp__section-text  ">Self-publishing an article in peer-reviewed journals is a complex and lengthy process that can discourage further research activities.
+                In turn, we propose to simplify this process and devote oneself entirely to science. This section provides simple steps for publishing your scientific works.</p>
+            <p class="hp-publish__list-title  ">Simple five steps</p>
+            <ul class="hp-publish__list  ">               
+            </ul>
+        </div>
+    </section>
+
+    <section class="hp-blog scp-section">
+        <div class="container">
+            <div class="hp-blog__wrapper scp-section__wrapper">
+                <h2 class="scp__section-title-h2">Latest science news</h2>
+            </div>
+            <div class="blog-posts">                
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <img class="footer__bg-image" src="./images/footer-bg.png" alt="Footer background image">
+
+    <div class="footer__wrapper container">
+        <div class="footer__logo-section">
+            <a class="footer__logo-link" href="/">
+                <img class="footer__logo" src="./images/scopus-publish-new-white.svg" alt="">
+            </a>
+            <p class="footer__logo-info">
+                Our company was created with the sole purpose of increasing intellectual contributions through
+                research in various fields of science. Our main goal is to allow young research scientists to
+                publish their research in peer-reviewed journals in the international databases Scopus and
+                WebOsScience
+            </p>
+        </div>
+
+        <ul class="footer__menu-list">
+            <li class="footer__menu-list-item">
+                <a class="footer__menu-list-link" href="#">Requirements</a>
+            </li>
+            <li class="footer__menu-list-item">
+                <a class="footer__menu-list-link" href="#">Guarantees</a>
+            </li>
+            <li class="footer__menu-list-item">
+                <a class="footer__menu-list-link" href="#">Comments</a>
+            </li>
+            <li class="footer__menu-list-item">
+                <a class="footer__menu-list-link" href="/privacy.html">Privacy Policy</a>
+            </li>
+            <li class="footer__menu-list-item">
+                <a class="footer__menu-list-link" href="#">Offer agreement</a>
+            </li>
+        </ul>
+
+        <div class="footer__contact">
+            <p class="footer__form-title">Leave your WhatApp and we will contact you</p>
+            <form class="footer__form">
+                <input type="text" class="footer__form-input" placeholder="Name">
+                <input type="text" class="footer__form-input" placeholder="Phone">
+                <button type="submit" class="footer__form-btn">Send contacts</button>
+            </form>
+
+            <div class="footer__contacts">
+                <ul class="footer__contact-info-list">
+                    <li class="footer__contact-info-list-item">
+                        <a class="footer__contact-info-list-link" href="">
+                            <img class="footer__contact-icon" src="./images/icons/footer/Pin_alt_fill.svg" alt="Geolocation icon">
+                            <p class="footer__contact-icon-text">Russia, Taganrog, st. Chekhova 215B</p>
+                        </a>
+                    </li>
+                    <li class="footer__contact-info-list-item">
+                        <a class="footer__contact-info-list-link" href="">
+                            <img class="footer__contact-icon" src="./images/icons/footer/Phone.svg" alt="Phone icon">
+                            <p class="footer__contact-icon-text">+7 900 925 55 35</p>
+                        </a>
+                    </li>
+                    <li class="footer__contact-info-list-item">
+                        <a class="footer__contact-info-list-link" href="">
+                            <img class="footer__contact-icon"  src="./images/icons/footer/mail-icon-blue.svg" alt="Email icon">
+                            <p class="footer__contact-icon-text">support@scopuspub.com</p>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="footer__social-common">
+                    <ul class="footer__social-list">
+                        <li class="footer__social-list-item">
+                            <a href="#" class="footer__social-list-link">
+                                <img class="footer__social-icon social-icon" src="./images/icons/mail-icon-blue.svg" alt="Social icon of email">
+                            </a>
+                        </li>
+                        <li class="footer__social-list-item">
+                            <a href="#" class="footer__social-list-link">
+                                <img class="footer__social-icon social-icon" src="./images/icons/telegram-icon-blue.svg" alt="Social icon of telegram">
+                            </a>
+                        </li>
+                        <li class="footer__social-list-item">
+                            <a href="#" class="footer__social-list-link">
+                                <img class="footer__social-icon social-icon" src="./images/icons/vk-icon-blue.svg" alt="Social icon of vk">
+                            </a>
+                        </li>
+                        <li class="footer__social-list-item">
+                            <a href="#" class="footer__social-list-link">
+                                <img class="footer__social-icon social-icon" src="./images/icons/whatsapp-icon-blue.svg" alt="Social icon of whatsapp">
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="footer__common">
+                        <a href="https://creativecommons.org/licenses/by/4.0/" class="footer__common-link">
+                            <img class="footer__common-img" src="./images/footer-common.png" alt="">
+                        </a>
+
+                        <span class="footer__common-age">
+                            <img class="footer__common-age-img" src="./images/age-16.png" alt="">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer__copyright container">
+        <p class="footer__copyright-text">&copy; 2024. All rights reserved </p>
+    </div>
+</footer>
+
+
+<script src="./js/our-team-classwork.js"></script>
+<script src="./js/advantages-classwork.js"></script>
+<script src="./js/accordion-classwork.js"></script>
+<script src="./js/publish-classwork.js"></script>
+<script src="./js/posts-classwork.js"></script>
+
+
+<script src="./js/main/main.js"></script>
+<script src="./js/main/remember.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+html, body{height: 100%}
+body{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.main{
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.footer{
+    display: flex;
+    flex: 0 0 auto;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.mobile-menu__body{overflow: hidden}
+
+.displayNone{display: none !important;}
+.displayShow{display: flex !important;}
+
+/*animation classes*/
+.animationLeftBlock{ opacity: 0;  &.animationLeft{ opacity: 1; }  }
+.animationLeft{ animation: 1s leftPosition ease-in-out; }
+@keyframes leftPosition {
+    0%{transform: translateX(-150%); opacity: 0; display: none; visibility: hidden;}
+    100%{transform: translateX(0); opacity: 1; display: flex; visibility: visible;}
+}
+
+.animationRightBlock{ opacity: 0;  &.animationRight{ opacity: 1; }  }
+.animationRight{ animation: 1s rightPosition ease-in-out; }
+@keyframes rightPosition {
+    0%{transform: translateX(150%); opacity: 0; display: none; visibility: hidden;}
+    100%{transform: translateX(0); opacity: 1; display: flex; visibility: visible;}
+}
+
+.animationOpacityBlock{ opacity: 0;  &.animationOpacity{ opacity: 1; }  }
+.animationOpacity{ animation: 1s opacityPosition ease-in-out; }
+@keyframes opacityPosition {
+    0%{opacity: 0; display: none; visibility: hidden;}
+    100%{opacity: 1; display: flex; visibility: visible;}
+}

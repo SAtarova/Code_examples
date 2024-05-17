@@ -1,0 +1,82 @@
+.main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.page-main-title{
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.actions,
+.some-text,
+.input-fields,
+.simple-list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 15px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.simple-action{
+    border: 1px solid #11497B;
+    outline: none;
+    background-color: #11497B;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+.simple-action:hover{
+    background-color: #fff;
+    color: #11497B;
+}
+.input-field{
+    border: none;
+    border-bottom: 1px solid #11497B;
+    padding: 5px 3px;
+}
+
+
+.newListText{
+    font-weight: 600;
+    font-size: 18px;
+}
+.elite-text{
+    font-weight: 600;
+    font-size: 18px;
+    color: #67670c;
+}
+.btn_white{
+    border: 1px solid #11497B;
+    outline: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #11497B;
+    transition: all .3s ease-in-out;
+}
+.simple-action:hover{
+    background-color: #11497B;
+    color: #fff;
+}
+.listActive{
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+.text-agl{
+    background-color: blueviolet;
+}
+
+.btn_white {
+    background-color: white;
+}
