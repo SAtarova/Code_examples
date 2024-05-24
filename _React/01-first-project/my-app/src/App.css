@@ -1,0 +1,33 @@
+.app-wrapper{
+  display: grid;
+  grid-template-areas: 
+  'h h'
+  'n c';
+  grid-template-rows: 200px 1fr;
+  grid-template-columns: 2fr 10fr;
+}
+
+.header{
+  grid-area: h;
+  background-color: ForestGreen;
+}
+
+.nav{
+  grid-area: n;
+  background-color: ForestGreen;
+}
+
+.content{
+  grid-area: c;
+  background-color: LightCyan;
+}
+
+.content_main_img{
+  height: 200px;
+  width: 100%;
+}
+
+.butterfly{
+  height: 150px;
+  width: 150px;
+}

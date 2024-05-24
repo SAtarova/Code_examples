@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>DOM remember</title>
+</head>
+<body>
+
+    <a class="download-link" href="news-array.txt" download> Скачать исходники:
+        <img class="download-img" src="./img/cloud-download.svg" alt="">
+    </a>
+
+    <main class="main">
+        <div class="container">
+            <section class="task">
+                <div class="task-info">
+                    <h2 class="task-title">Counter Task</h2>
+                    <p class="task-description">Создать схожую верстку: две кнопки и текстовое поле с отображением начального числа счетчика. Реализовать следующий функционал: при нажатии на кнопку "+" увеличивать счетчик на 1, когда счетчик станет равен 10, кнопка должна стать не активной (по нажатию, счетчик больше не увеличивается) и появиться сообщение (alert), что достигнут максимум счетчика, при нажатии на кнопку "-" уменьшать счетчик на 1, если счетчик станет равен 0, вывести сообщение (alert) что достигнут минимум счетчика.</p>
+                </div>
+
+                <div class="task-block">
+                    <div class="counter">
+                        <button class="decrease-btn counter-btn">-</button>
+                        <input type="text" class="increase-decrease" value="0">
+                        <button class="increase-btn counter-btn">+</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="task">
+                <div class="task-info">
+                    <h2 class="task-title">Comment Form Task</h2>
+                    <p class="task-description">Создать схожую верстку: три текстовых поля и кнопка отправки комментария. Создать пустой массив, для хранения созданных комментариев. Реализовать следующий функционал: при нажатии на кнопку, проверить чтобы все четыре поля не были пустыми, если они не пустые, сформировать объект со следующими пятью свойствами: id, title, body, rating, author. Свойству id присваивать число, равное длине массива плюс один. После создания объекта, поместить его в конец созданного вами массива с комментариями и очистить все поля. Массив с комментариями вывести при помощи console</p>
+                </div>
+
+                <div class="task-block">
+                    <div class="form-comment">
+                        <input type="text" class="form-comment-input" name="title" placeholder="Введите заголовок комментария">
+                        <input type="text" class="form-comment-input" name="body" placeholder="Введите ваше сообщение">
+                        <input type="text" class="form-comment-input" name="rating" placeholder="Введите рейтинг доверия">
+                        <input type="text" class="form-comment-input" name="author" placeholder="Введите ваше имя">
+                        <button class="form-comment-button">Send Comment</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="task">
+                <div class="task-info">
+                    <h2 class="task-title">Comment Section Task</h2>
+                    <p class="task-description">Создать схожую верстку: карточки с комментариями, а также форму для вывода комментариев, 
+                    которая содержит: четыре поля и кнопку. Новые комментарии добавляются в конце уже созданных комментариев. 
+                    Форма создания комментариев дублирует функционал предыдущего задания, с добавлением следующего, нового функционала: 
+                    если строка с сообщением (свойство body) больше 55 символов, обрезать ее и вставить в конце три точки; 
+                    провести проверку поля автора, если комментарий с таким же автором уже был написан, изменить рейтинг доверия на "5".</p>
+                </div>
+
+                <div class="comments">
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="comment-title">Lorem ipsum dolor sit amet.</p>
+                        <p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate deleniti est non quos ullam.</p>
+                        <div class="comment-info">
+                            <p class="comment-id">Id: 15</p>
+                            <p class="comment-id">Rating: 3</p>
+                            <p class="comment-author">Alex</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task-block">
+                    <div class="comment-form">
+                        <input type="text" class="comment-form-input" name="title" placeholder="Введите заголовок комментария">
+                        <input type="text" class="comment-form-input" name="body" placeholder="Введите ваше сообщение">
+                        <input type="text" class="comment-form-input" name="rating" placeholder="Введите рейтинг доверия">
+                        <input type="text" class="comment-form-input" name="author" placeholder="Введите ваше имя">
+                        <button class="comment-form-button">Send Comment</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="task">
+                <div class="task-info">
+                    <h2 class="task-title">News Task</h2>
+                    <p class="task-description">Создать схожую верстку: Кнопка с отображением постов, кнопка с сортировкой по названию, 
+                    select с выбором имени автора, кнопка удалить все. Скачать предоставленный файл с массивом новостей, 
+                    вывести новости на экран и реализовать следующий функционал: сортировку новостей по названию, 
+                    фильтр новостей по имени автора, удаление всех новостей по нажатию на кнопку. 
+                    <a class="download" href="news-array.txt" download>Скачать файл</a></p>
+                </div>
+
+                <div class="news-action">
+                    <button class="get-posts new-btn">Получить посты</button>
+                    <button class="sort-title new-btn">Сортировка по названию</button>
+                    <select name="name" class="select-name">
+                        <option value="Anna">Anna</option>
+                        <option value="Alex">Alex</option>
+                        <option value="Nina">Nina</option>
+                    </select>
+                    <button class="delete-all new-btn">Удалить все</button>
+                </div>
+                <div class="news">
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="js/solver.js">
+
+    </script>
+</body>
+</html>

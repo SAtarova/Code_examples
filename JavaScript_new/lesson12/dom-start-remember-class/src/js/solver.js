@@ -333,57 +333,42 @@ tasksParent.onclick = function (event) {
 
 // Open Comment
 
-const commentsParent = document.querySelector('.reviews')
 const infoBody = document.querySelectorAll('.review')
+const modalWindow = document.querySelector('.review-modal')
+const modalContainer = document.querySelector('.review-modal__container')
 
-infoBody.forEach(item => {
-    console.log(item)
+infoBody.forEach((item, index) => {
     if (item.children[1].textContent.length > 150) {
         item.children[1].setAttribute('title', item.children[1].textContent)
         item.children[1].textContent = item.children[1].textContent.slice(0, 149) + '...';
+        let indexForMoved = -1
 
         item.addEventListener('click', (e) => {
-            document.querySelector('.review-modal').classList.toggle('displayShow');
-            document.querySelector('.review-modal__container').appendChild(item);
-            item.children[1].textContent = item.children[1].getAttribute('title');
+            e.preventDefault();
+            modalWindow.classList.toggle('displayShow');
 
+            if (modalWindow.classList.contains('displayShow')){
+                modalContainer.appendChild(item);
+                item.children[1].textContent = item.children[1].getAttribute('title');
+                indexForMoved = index
+            }
+            else{                
+                item.children[1].textContent = item.children[1].textContent.slice(0, 149) + '...';
+                infoBody[indexForMoved - 1].after(item);
+
+            }
+        })
+
+        modalWindow.addEventListener('click', (e) => {
+
+            if (modalWindow.classList.contains('displayShow')){
+                modalWindow.classList.toggle('displayShow');
+                item.children[1].textContent = item.children[1].textContent.slice(0, 149) + '...';
+                infoBody[indexForMoved - 1].after(item);
+            }
         })
     }
 })
-
-/*
-
-commentsParent.onclick = function (event) {
-    
-
-    let objTarget = event.target
-    const listParent = [...document.querySelectorAll('.review')]
-
-    for (i = 0; i < listParent.length; i++) {   
-
-        const listInfo = [...listParent[i].querySelectorAll('.review__info-body', '.review-modal__container')][0]
-
-        if (objTarget == listInfo) {
-            console.log(i)
-            console.log(listInfo.className)  
-
-            listInfo.textContent = [listInfo.title, listInfo.title = listInfo.textContent][0]
-
-            if (listInfo.className == 'review__info-body') {
-                listInfo.className = 'review-modal__container'
-                listInfo.style.display = 'block'
-            }
-            else {
-                listInfo.style.display = 'none'
-                listInfo.className = 'review__info-body'
-            }
-
-            
-        }
-    }
-
-    
-}*/
 
 
 
