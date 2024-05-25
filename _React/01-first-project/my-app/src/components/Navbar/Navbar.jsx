@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './Navbar.module.css'
+import {NavLink} from "react-router-dom";
 console.log(s)
 
 // let classes = {
@@ -17,23 +18,25 @@ let stringNew = `${s.item} ${s.active}`
 const Navbar = () => {
     return (
         <nav className={s.nav}>
-            <div className={stringNew}>
-                <a>Profile</a>
+            <div className={s.item}>
+                <NavLink to='/profile' className = {navData => navData.isActive ? s.activeLink : s.item}>
+                    Profile</NavLink>
             </div>
-            <div className={stringNew}>
-                <a>Messages</a>
+            <div className={s.item}>
+                <NavLink to='/dialogs' className = {navData => navData.isActive ? s.activeLink : s.item}>
+                    Messages</NavLink>
             </div>
-            <div className={stringNew}>
-                <a>News</a>
+            <div className={s.item}>
+                <NavLink to='/news' className = {navData => navData.isActive ? s.activeLink : s.item}>
+                    News</NavLink>
             </div>
-            <div className={stringNew}>
-                <a>Music</a>
+            <div className={s.item}>
+                <NavLink to='/music' className = {navData => navData.isActive ? s.activeLink : s.item}>
+                    Music</NavLink>
             </div>
-            <div className={stringNew}>
-                <a>\n</a>
-            </div>
-            <div className={stringNew}>
-                <a>Settings</a>
+            <div className={s.item}>
+                <NavLink to='/settings' className = {navData => navData.isActive ? s.activeLink : s.item}>
+                    Settings</NavLink>
             </div>
         </nav>
     )

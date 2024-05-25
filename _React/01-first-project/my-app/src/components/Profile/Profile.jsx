@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import s from './Profile.module.css'
 import MyPosts from './MyPosts/MyPosts'
 
@@ -17,4 +17,4 @@ const Profile = () => {
     )
 }
 
-export default Profile;
+export default Profile
